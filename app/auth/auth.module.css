@@ -1,0 +1,153 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient-hero);
+  position: relative;
+  overflow: hidden;
+  padding: 24px;
+}
+
+.orb1 {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(98,68,235,0.4) 0%, transparent 70%);
+  top: -200px;
+  left: -200px;
+  border-radius: 50%;
+  filter: blur(70px);
+  animation: float 10s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.orb2 {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(34,211,238,0.3) 0%, transparent 70%);
+  bottom: -150px;
+  right: -150px;
+  border-radius: 50%;
+  filter: blur(70px);
+  animation: float 12s ease-in-out infinite reverse;
+  pointer-events: none;
+}
+
+.grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(124,106,245,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124,106,245,0.05) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+.card {
+  width: 100%;
+  max-width: 440px;
+  background: rgba(24,24,56,0.75);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(124,106,245,0.2);
+  border-radius: 24px;
+  padding: 40px;
+  position: relative;
+  z-index: 1;
+  animation: slide-up 0.5s ease;
+}
+
+.logo {
+  display: block;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 900;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 28px;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #f0f0ff;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: var(--gray-400);
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.field {
+  margin-bottom: 14px;
+}
+
+.twoCol {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.dividerRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.dividerRow span {
+  flex: 1;
+  height: 1px;
+  background: rgba(255,255,255,0.08);
+}
+
+.dividerRow p {
+  font-size: 0.82rem;
+  color: var(--gray-500);
+  white-space: nowrap;
+}
+
+.demoHint {
+  margin-top: 24px;
+  padding: 16px;
+  background: rgba(98,68,235,0.06);
+  border: 1px solid rgba(98,68,235,0.15);
+  border-radius: 12px;
+}
+
+.demoHint p {
+  font-size: 0.8rem;
+  color: var(--gray-400);
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.demoAccounts {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.demoAccounts span {
+  font-size: 0.78rem;
+  color: var(--gray-500);
+  font-family: monospace;
+}
+
+.demoAccounts strong {
+  color: var(--primary-300);
+}

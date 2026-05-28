@@ -41,11 +41,15 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* CTA */}
-        <a href="#learning" className="btn btn-primary btn-sm" style={{ display: 'none' }}
-          id="nav-cta" aria-label="Start Learning">
-          Start Learning
-        </a>
+        {/* CTA Buttons */}
+        <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+          <a href="/auth/login" className="btn btn-secondary btn-sm" id="nav-login-btn">
+            Sign In
+          </a>
+          <a href="/auth/register" className="btn btn-primary btn-sm" id="nav-register-btn">
+            🚀 Start Learning
+          </a>
+        </div>
 
         {/* Mobile Toggle */}
         <button

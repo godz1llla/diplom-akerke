@@ -1,0 +1,37 @@
+.page { display:flex; flex-direction:column; gap:24px; }
+.pageHeader { margin-bottom:4px; }
+
+.howTo { padding:24px; }
+.steps { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+.step  { display:flex; align-items:flex-start; gap:10px; }
+.stepBubble { font-size:1.4rem; flex-shrink:0; margin-top:2px; }
+.stepTitle  { font-size:.88rem; font-weight:700; color:#f0f0ff; margin-bottom:3px; }
+.stepDesc   { font-size:.78rem; color:var(--gray-400); line-height:1.4; }
+
+.formCard { padding:26px; }
+.field    { margin-bottom:16px; }
+.twoCol   { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+
+.emptyState { padding:48px; text-align:center; }
+
+.entries { display:flex; flex-direction:column; gap:14px; }
+.entry   { padding:20px; position:relative; transition:all .3s; }
+.entry:hover { transform:translateX(4px); border-color:rgba(98,68,235,.3); }
+
+.entryNum {
+  position:absolute; top:16px; right:16px;
+  font-size:.78rem; font-weight:700; color:var(--gray-600);
+  background:rgba(255,255,255,.03); padding:3px 8px; border-radius:var(--radius-full);
+}
+
+.entryRow     { margin-bottom:8px; }
+.errorText    { font-size:.9rem; color:var(--rose-400); background:rgba(244,63,94,.07); padding:6px 10px; border-radius:var(--radius-sm); display:block; font-family:monospace; }
+.correctionText { font-size:.9rem; color:var(--emerald-400); background:rgba(16,185,129,.07); padding:6px 10px; border-radius:var(--radius-sm); display:block; font-family:monospace; }
+.reasonText   { font-size:.82rem; color:var(--gray-400); margin-top:6px; }
+.learnedText  { font-size:.82rem; color:var(--primary-300); margin-top:4px; }
+.entryDate    { font-size:.72rem; color:var(--gray-600); margin-top:10px; }
+
+@media(max-width:700px) {
+  .steps  { grid-template-columns:1fr 1fr; }
+  .twoCol { grid-template-columns:1fr; }
+}
