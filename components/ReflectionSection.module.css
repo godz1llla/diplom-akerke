@@ -1,0 +1,129 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.8fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.whyCard, .quoteCard, .formCard {
+  padding: 28px;
+}
+
+.reflectionBenefits {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.benefit {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: var(--gray-300);
+  padding: 8px 12px;
+  background: rgba(255,255,255,0.03);
+  border-radius: var(--radius-sm);
+  transition: background 0.2s ease;
+}
+
+.benefit:hover {
+  background: rgba(245,158,11,0.08);
+}
+
+.quoteMarks {
+  font-size: 4rem;
+  line-height: 0.8;
+  color: var(--amber-400);
+  font-family: Georgia, serif;
+  margin-bottom: 12px;
+  opacity: 0.6;
+}
+
+.quoteBody {
+  font-size: 0.95rem;
+  color: var(--gray-300);
+  font-style: italic;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.quoteSource {
+  font-size: 0.78rem;
+  color: var(--gray-500);
+  font-weight: 600;
+}
+
+/* Form */
+.nameRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.field {
+  margin-bottom: 18px;
+}
+
+.qIcon {
+  margin-right: 4px;
+}
+
+.errorMsg {
+  background: rgba(244,63,94,0.1);
+  border: 1px solid rgba(244,63,94,0.25);
+  color: var(--rose-400);
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  font-size: 0.88rem;
+  margin-bottom: 16px;
+}
+
+/* Success */
+.successState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  padding: 40px 20px;
+}
+
+.successEmoji {
+  font-size: 4rem;
+  animation: bounce 0.8s ease;
+}
+
+.completedBadge {
+  padding: 12px 24px;
+  background: rgba(245,158,11,0.12);
+  border: 1px solid rgba(245,158,11,0.3);
+  border-radius: var(--radius-full);
+  color: var(--amber-400);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-20px); }
+  60% { transform: translateY(-10px); }
+}
+
+@media (max-width: 900px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  .nameRow {
+    grid-template-columns: 1fr;
+  }
+}

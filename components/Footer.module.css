@@ -1,0 +1,142 @@
+.footer {
+  background: var(--bg-surface);
+  border-top: 1px solid var(--bg-border);
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 0;
+}
+
+.topGlow {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 1px;
+  background: var(--gradient-primary);
+  filter: blur(4px);
+  opacity: 0.6;
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 48px;
+  padding: 64px 0 48px;
+}
+
+/* Brand */
+.brand {}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 900;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 14px;
+}
+
+.tagline {
+  font-size: 0.88rem;
+  color: var(--gray-500);
+  line-height: 1.65;
+  margin-bottom: 20px;
+  max-width: 300px;
+}
+
+.badges {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Nav */
+.colTitle {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gray-400);
+  margin-bottom: 16px;
+}
+
+.navGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 12px;
+}
+
+.navLink {
+  font-size: 0.85rem;
+  color: var(--gray-500);
+  transition: color 0.2s ease;
+  display: block;
+  padding: 2px 0;
+}
+
+.navLink:hover {
+  color: var(--primary-300);
+}
+
+/* Info */
+.infoList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.infoItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.83rem;
+  color: var(--gray-500);
+  line-height: 1.4;
+}
+
+/* Bottom bar */
+.bottomBar {
+  border-top: 1px solid var(--bg-border);
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.copyright {
+  font-size: 0.8rem;
+  color: var(--gray-600);
+}
+
+.bottomRight {}
+
+.madeWith {
+  font-size: 0.8rem;
+  color: var(--gray-600);
+}
+
+@media (max-width: 900px) {
+  .inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .brand {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .inner {
+    grid-template-columns: 1fr;
+    padding: 40px 0 32px;
+  }
+  .brand { grid-column: 1; }
+  .bottomBar {
+    flex-direction: column;
+    text-align: center;
+  }
+}

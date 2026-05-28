@@ -1,0 +1,197 @@
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.leftCol {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.howCard, .driveCard, .developsCard {
+  padding: 24px;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.journalStep {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.stepBubble {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: rgba(98,68,235,0.15);
+  border: 1px solid rgba(98,68,235,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.stepNum {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 18px;
+  height: 18px;
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  font-size: 0.65rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.stepEmoji {
+  font-size: 1.1rem;
+}
+
+.stepTitle {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #f0f0ff;
+  margin-bottom: 2px;
+}
+
+.stepDesc {
+  font-size: 0.8rem;
+  color: var(--gray-400);
+  line-height: 1.5;
+}
+
+/* Drive card */
+.driveTop {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--bg-border);
+}
+
+.driveFiles {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.driveFile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: var(--gray-400);
+  padding: 6px 10px;
+  background: rgba(255,255,255,0.03);
+  border-radius: var(--radius-sm);
+}
+
+/* Right col */
+.rightCol {}
+
+.entries {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.entry {
+  padding: 20px;
+  transition: all 0.3s ease;
+  border-radius: var(--radius-lg);
+}
+
+.entry:hover {
+  transform: translateX(4px);
+}
+
+.entryHeader {
+  margin-bottom: 14px;
+}
+
+.errorRow, .correctionRow, .reasonRow {
+  margin-bottom: 10px;
+}
+
+.errorLabel, .correctionLabel, .reasonLabel {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--gray-500);
+  margin-bottom: 4px;
+}
+
+.errorText {
+  font-size: 0.9rem;
+  color: var(--rose-400);
+  background: rgba(244,63,94,0.07);
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  font-family: monospace;
+}
+
+.correctionText {
+  font-size: 0.9rem;
+  color: var(--emerald-400);
+  background: rgba(16,185,129,0.07);
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  font-family: monospace;
+}
+
+.reasonText {
+  font-size: 0.85rem;
+  color: var(--gray-300);
+  line-height: 1.55;
+}
+
+/* Develops */
+.developsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.developChip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px;
+  background: rgba(98,68,235,0.08);
+  border: 1px solid rgba(98,68,235,0.15);
+  border-radius: var(--radius-sm);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--gray-300);
+  transition: all 0.2s ease;
+}
+
+.developChip:hover {
+  background: rgba(98,68,235,0.18);
+  color: var(--primary-200);
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .developsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

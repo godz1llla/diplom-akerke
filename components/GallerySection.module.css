@@ -1,0 +1,99 @@
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.card {
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+}
+
+.preview {
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 20px;
+}
+
+.previewEmoji {
+  font-size: 3.5rem;
+  margin-bottom: 12px;
+}
+
+.projectType {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.gradeTag {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(30,30,66,0.8);
+  border: 1px solid var(--bg-border);
+  color: var(--amber-400);
+  font-weight: 800;
+  font-size: 0.9rem;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+
+.cardBody {
+  padding: 20px;
+}
+
+.projectTitle {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #f0f0ff;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.studentName {
+  font-size: 0.82rem;
+  color: var(--gray-400);
+  margin-bottom: 12px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: var(--radius-full);
+  color: var(--gray-400);
+}
+
+@media (max-width: 900px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
