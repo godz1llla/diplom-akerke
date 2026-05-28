@@ -25,7 +25,7 @@ export default function HeroSection() {
           {/* Badge */}
           <div className={`badge badge-primary ${styles.badge}`}>
             <span>✦</span>
-            Diploma Research Project · 2024
+            Diploma Research Project · 2026
           </div>
 
           {/* Heading */}

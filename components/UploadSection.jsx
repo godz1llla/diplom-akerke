@@ -105,7 +105,7 @@ export default function UploadSection() {
               <div className={styles.driveInfo}>
                 <span className={styles.driveIcon}>📂</span>
                 <span style={{ fontSize: '0.82rem', color: 'var(--accent-400)', fontWeight: 600 }}>
-                  Class 10A — Digital Projects 2024
+                  Class 10A — Digital Projects 2026
                 </span>
               </div>
             </div>

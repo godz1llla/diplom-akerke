@@ -56,9 +56,10 @@ export default function AdminStudentsPage() {
             <tbody>
               {filtered.map((s, i) => (
                 <tr key={s.id} id={`student-row-${s.id}`}
-                  style={{ borderBottom: i < filtered.length-1 ? '1px solid rgba(255,255,255,.04)' : 'none', transition:'background .2s' }}
+                  style={{ borderBottom: i < filtered.length-1 ? '1px solid rgba(255,255,255,.04)' : 'none', transition:'background .2s', cursor:'pointer' }}
                   onMouseEnter={e=>e.currentTarget.style.background='rgba(98,68,235,.05)'}
-                  onMouseLeave={e=>e.currentTarget.style.background='transparent'}>
+                  onMouseLeave={e=>e.currentTarget.style.background='transparent'}
+                  onClick={() => router.push(`/dashboard/admin/students/${s.id}`)}>
                   <td style={{ padding:'14px 20px' }}>
                     <div style={{ display:'flex', alignItems:'center', gap:10 }}>
                       <div style={{ width:32, height:32, borderRadius:'50%', background:'var(--gradient-primary)', display:'flex', alignItems:'center', justifyContent:'center', fontWeight:700, color:'#fff', fontSize:'.88rem', flexShrink:0 }}>
@@ -66,7 +67,6 @@ export default function AdminStudentsPage() {
                       </div>
                       <div>
                         <div style={{ fontWeight:600, color:'#f0f0ff', fontSize:'.9rem' }}>{s.full_name}</div>
-                        <div style={{ fontSize:'.72rem', color:'var(--gray-600)' }}>{s.email || 'No email'}</div>
                       </div>
                     </div>
                   </td>
@@ -75,10 +75,7 @@ export default function AdminStudentsPage() {
                   <td style={{ padding:'14px 20px', fontSize:'.9rem', fontWeight:600, color:'var(--accent-400)' }}>{s.projects?.[0]?.count || 0}</td>
                   <td style={{ padding:'14px 20px', fontSize:'.78rem', color:'var(--gray-500)' }}>{new Date(s.created_at).toLocaleDateString()}</td>
                   <td style={{ padding:'14px 20px' }}>
-                    <button onClick={()=>handlePromote(s.id)} className="btn btn-secondary btn-sm"
-                      id={`promote-${s.id}`} title="Promote to admin">
-                      ↑ Admin
-                    </button>
+                    <span style={{ fontSize:'.78rem', color:'var(--primary-300)', fontWeight:600 }}>View Details →</span>
                   </td>
                 </tr>
               ))}

@@ -19,10 +19,11 @@ const STUDENT_NAV = [
 const ADMIN_NAV = [
   { href: '/dashboard/admin',              icon: '📊', label: 'Overview' },
   { href: '/dashboard/admin/students',     icon: '👥', label: 'Students' },
-  { href: '/dashboard/admin/quizzes',      icon: '🧠', label: 'Quizzes' },
   { href: '/dashboard/admin/projects',     icon: '📁', label: 'Projects' },
   { href: '/dashboard/admin/reflections',  icon: '✨', label: 'Reflections' },
   { href: '/dashboard/admin/analytics',    icon: '📈', label: 'Analytics' },
+  { href: '/dashboard/admin/texts',        icon: '📖', label: 'Manage Texts' },
+  { href: '/dashboard/admin/quizzes',      icon: '🧠', label: 'Manage Quizzes' },
 ];
 
 export default function DashboardLayout({ children }) {
