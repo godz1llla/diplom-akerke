@@ -30,7 +30,9 @@ export default function LoginPage() {
       .single();
 
     toast.success('Welcome back! 🎉');
-    router.push(profile?.role === 'admin' ? '/dashboard/admin' : '/dashboard/student');
+    // Hard redirect — ensures AuthContext loads fresh session before dashboard renders
+    const dest = profile?.role === 'admin' ? '/dashboard/admin' : '/dashboard/student';
+    window.location.href = dest;
   };
 
   return (
