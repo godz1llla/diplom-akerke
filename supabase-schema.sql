@@ -124,15 +124,24 @@ ALTER TABLE projects              ENABLE ROW LEVEL SECURITY;
 ALTER TABLE reflections           ENABLE ROW LEVEL SECURITY;
 ALTER TABLE challenge_submissions ENABLE ROW LEVEL SECURITY;
 
+-- ── Helper function to check admin role without RLS recursion ──
+CREATE OR REPLACE FUNCTION public.is_admin()
+RETURNS boolean AS $$
+BEGIN
+  RETURN EXISTS (
+    SELECT 1 FROM public.profiles
+    WHERE id = auth.uid() AND role = 'admin'
+  );
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
 -- profiles: users see own profile, admins see all
 CREATE POLICY "Users can view own profile"
   ON profiles FOR SELECT USING (auth.uid() = id);
 CREATE POLICY "Users can update own profile"
   ON profiles FOR UPDATE USING (auth.uid() = id);
 CREATE POLICY "Admins can view all profiles"
-  ON profiles FOR SELECT USING (
-    EXISTS (SELECT 1 FROM profiles WHERE id = auth.uid() AND role = 'admin')
-  );
+  ON profiles FOR SELECT USING (public.is_admin());
 
 -- Allow profile creation on signup
 CREATE POLICY "Allow profile insert on signup"
@@ -142,24 +151,18 @@ CREATE POLICY "Allow profile insert on signup"
 CREATE POLICY "Authenticated users read texts"
   ON texts FOR SELECT TO authenticated USING (true);
 CREATE POLICY "Admins can manage texts"
-  ON texts FOR ALL USING (
-    EXISTS (SELECT 1 FROM profiles WHERE id = auth.uid() AND role = 'admin')
-  );
+  ON texts FOR ALL USING (public.is_admin());
 
 -- quizzes & questions: all authenticated users can read
 CREATE POLICY "Authenticated users read quizzes"
   ON quizzes FOR SELECT TO authenticated USING (true);
 CREATE POLICY "Admins manage quizzes"
-  ON quizzes FOR ALL USING (
-    EXISTS (SELECT 1 FROM profiles WHERE id = auth.uid() AND role = 'admin')
-  );
+  ON quizzes FOR ALL USING (public.is_admin());
 
 CREATE POLICY "Authenticated users read questions"
   ON quiz_questions FOR SELECT TO authenticated USING (true);
 CREATE POLICY "Admins manage questions"
-  ON quiz_questions FOR ALL USING (
-    EXISTS (SELECT 1 FROM profiles WHERE id = auth.uid() AND role = 'admin')
-  );
+  ON quiz_questions FOR ALL USING (public.is_admin());
 
 -- quiz_results: students see own, admins see all
 CREATE POLICY "Students see own results"
@@ -167,41 +170,31 @@ CREATE POLICY "Students see own results"
 CREATE POLICY "Students insert own results"
   ON quiz_results FOR INSERT WITH CHECK (auth.uid() = student_id);
 CREATE POLICY "Admins see all results"
-  ON quiz_results FOR SELECT USING (
-    EXISTS (SELECT 1 FROM profiles WHERE id = auth.uid() AND role = 'admin')
-  );
+  ON quiz_results FOR SELECT USING (public.is_admin());
 
 -- error_journals
 CREATE POLICY "Students manage own journal"
   ON error_journals FOR ALL USING (auth.uid() = student_id);
 CREATE POLICY "Admins read all journals"
-  ON error_journals FOR SELECT USING (
-    EXISTS (SELECT 1 FROM profiles WHERE id = auth.uid() AND role = 'admin')
-  );
+  ON error_journals FOR SELECT USING (public.is_admin());
 
 -- projects
 CREATE POLICY "Students manage own projects"
   ON projects FOR ALL USING (auth.uid() = student_id);
 CREATE POLICY "Admins manage all projects"
-  ON projects FOR ALL USING (
-    EXISTS (SELECT 1 FROM profiles WHERE id = auth.uid() AND role = 'admin')
-  );
+  ON projects FOR ALL USING (public.is_admin());
 
 -- reflections
 CREATE POLICY "Students manage own reflections"
   ON reflections FOR ALL USING (auth.uid() = student_id);
 CREATE POLICY "Admins read all reflections"
-  ON reflections FOR SELECT USING (
-    EXISTS (SELECT 1 FROM profiles WHERE id = auth.uid() AND role = 'admin')
-  );
+  ON reflections FOR SELECT USING (public.is_admin());
 
 -- challenge_submissions
 CREATE POLICY "Students manage own challenges"
   ON challenge_submissions FOR ALL USING (auth.uid() = student_id);
 CREATE POLICY "Admins manage all challenges"
-  ON challenge_submissions FOR ALL USING (
-    EXISTS (SELECT 1 FROM profiles WHERE id = auth.uid() AND role = 'admin')
-  );
+  ON challenge_submissions FOR ALL USING (public.is_admin());
 
 -- ══════════════════════════════════════════════════════════════
 -- TRIGGER: auto-create profile on auth.users insert
