@@ -1,0 +1,462 @@
+/* ────────────────────────────────────────────────────────────
+   BookTasksSection.module.css
+   ──────────────────────────────────────────────────────────── */
+
+/* ── Section wrapper ── */
+.section {
+  background: var(--bg-base);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Tab Bar ── */
+.tabBar {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+}
+
+.tabBtn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 32px;
+  border-radius: var(--radius-full);
+  border: 1.5px solid rgba(124, 106, 245, 0.2);
+  background: rgba(30, 30, 66, 0.5);
+  color: var(--gray-400);
+  font-family: var(--font-outfit);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  overflow: hidden;
+}
+
+.tabBtn:hover {
+  border-color: var(--tab-color, var(--primary-400));
+  color: #e8e8ff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.tabBtnActive {
+  border-color: var(--tab-color, var(--primary-500));
+  color: #f0f0ff;
+  background: rgba(30, 30, 66, 0.85);
+  box-shadow: 0 0 20px rgba(98, 68, 235, 0.2);
+}
+
+.tabEmoji {
+  font-size: 1.2rem;
+}
+
+.tabIndicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  border-radius: var(--radius-full) var(--radius-full) 0 0;
+}
+
+/* ── Tab Content wrapper ── */
+.tabContent {
+  animation: fade-in 0.4s ease;
+}
+
+/* ── Coming Soon ── */
+.comingSoon {
+  text-align: center;
+  padding: 80px 40px;
+  color: var(--gray-400);
+}
+
+.comingSoonIcon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.comingSoon h3 {
+  color: #e8e8ff;
+  margin-bottom: 12px;
+}
+
+/* ── Health Tab ── */
+.healthTab {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* ── Reading Card ── */
+.readingCard {
+  padding: 36px 40px;
+}
+
+.readingHeader {
+  margin-bottom: 24px;
+}
+
+.readingBadge {
+  display: inline-block;
+  padding: 6px 14px;
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: var(--radius-full);
+  color: var(--emerald-400);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.readingTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #f0f0ff;
+  margin: 0;
+}
+
+.readingBody {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.readingBody p {
+  color: var(--gray-300);
+  line-height: 1.8;
+  font-size: 0.97rem;
+}
+
+/* ── Tasks Grid ── */
+.tasksGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ── Task Card ── */
+.taskCard {
+  overflow: hidden;
+  transition: box-shadow var(--transition-base);
+}
+
+.taskCard:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* ── Task Header ── */
+.taskHeader {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  gap: 16px;
+  transition: background var(--transition-fast);
+  text-align: left;
+}
+
+.taskHeader:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.taskHeaderLeft {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.taskEmoji {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+}
+
+.taskLevel {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.taskName {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #e8e8ff;
+}
+
+.taskChevron {
+  color: var(--gray-500);
+  font-size: 0.8rem;
+  transition: transform var(--transition-base);
+  flex-shrink: 0;
+}
+
+.taskChevronOpen {
+  transform: rotate(180deg);
+}
+
+/* ── Task Body ── */
+.taskBody {
+  padding: 0 28px 28px;
+  border-top: 1px solid rgba(124, 106, 245, 0.12);
+  animation: slide-up 0.3s ease;
+}
+
+.taskInstruction {
+  color: var(--gray-300);
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border-left: 3px solid var(--primary-500);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  margin-top: 20px;
+}
+
+/* ── Question list ── */
+.questionList {
+  list-style: none;
+  counter-reset: question-counter;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.questionList li {
+  counter-increment: question-counter;
+  position: relative;
+  padding-left: 36px;
+}
+
+.questionList li::before {
+  content: counter(question-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.questionText {
+  color: #e8e8ff;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.answerArea {
+  width: 100%;
+  resize: vertical;
+  min-height: 64px;
+}
+
+/* ── Tables ── */
+.tableWrapper {
+  overflow-x: auto;
+  margin-top: 20px;
+  border-radius: var(--radius-md);
+}
+
+.dataTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.dataTable th {
+  padding: 12px 16px;
+  background: rgba(98, 68, 235, 0.2);
+  color: var(--primary-200);
+  font-weight: 700;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.dataTable th:first-child {
+  border-radius: var(--radius-sm) 0 0 0;
+}
+
+.dataTable th:last-child {
+  border-radius: 0 var(--radius-sm) 0 0;
+}
+
+.dataTable td {
+  padding: 10px 16px;
+  border-bottom: 1px solid rgba(124, 106, 245, 0.1);
+}
+
+.dataTable tr:last-child td {
+  border-bottom: none;
+}
+
+.dataTable input {
+  padding: 8px 12px;
+  font-size: 0.88rem;
+}
+
+.mealLabel {
+  font-weight: 600;
+  color: var(--gray-300);
+  white-space: nowrap;
+  min-width: 100px;
+}
+
+/* ── Opinion ── */
+.statement {
+  background: rgba(251, 113, 133, 0.1);
+  border: 1px solid rgba(251, 113, 133, 0.25);
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
+  padding-left: 52px;
+  color: #f0f0ff;
+  font-size: 1.05rem;
+  font-style: italic;
+  font-weight: 500;
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.quoteIcon {
+  position: absolute;
+  left: 16px;
+  top: 12px;
+  font-size: 2.5rem;
+  color: rgba(251, 113, 133, 0.4);
+  font-family: Georgia, serif;
+  line-height: 1;
+}
+
+.wordCount {
+  display: block;
+  text-align: right;
+  font-size: 0.82rem;
+  margin-top: 6px;
+  font-weight: 500;
+}
+
+/* ── Creative ── */
+.optionsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.optionChip {
+  padding: 6px 14px;
+  background: rgba(167, 139, 250, 0.15);
+  border: 1px solid rgba(167, 139, 250, 0.3);
+  border-radius: var(--radius-full);
+  color: #c4b5fd;
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.checklistBox {
+  background: rgba(16, 185, 129, 0.07);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  margin-bottom: 20px;
+}
+
+.checklistTitle {
+  font-weight: 600;
+  color: var(--emerald-400);
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+.checklistItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--gray-300);
+  font-size: 0.92rem;
+  margin-bottom: 6px;
+}
+
+.checkmark {
+  color: var(--emerald-400);
+  font-weight: 700;
+}
+
+/* ── Descriptor ── */
+.descriptor {
+  margin-top: 24px;
+  padding: 16px 20px;
+  background: rgba(98, 68, 235, 0.07);
+  border: 1px solid rgba(98, 68, 235, 0.2);
+  border-radius: var(--radius-md);
+}
+
+.descriptorTitle {
+  font-weight: 700;
+  color: var(--primary-300);
+  margin-bottom: 10px;
+  font-size: 0.88rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.descriptor ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.descriptor ul li {
+  color: var(--gray-400);
+  font-size: 0.88rem;
+  padding-left: 14px;
+  position: relative;
+}
+
+.descriptor ul li::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: var(--primary-500);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .tabBtn {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+
+  .readingCard {
+    padding: 24px 20px;
+  }
+
+  .taskHeader {
+    padding: 16px 20px;
+  }
+
+  .taskBody {
+    padding: 0 20px 24px;
+  }
+}

@@ -5,6 +5,7 @@ import QuizSection        from '../components/QuizSection';
 import ErrorAnalysisSection from '../components/ErrorAnalysisSection';
 import ChallengeSection   from '../components/ChallengeSection';
 import GallerySection     from '../components/GallerySection';
+import BookTasksSection   from '../components/BookTasksSection';
 import UploadSection      from '../components/UploadSection';
 import FeedbackSection    from '../components/FeedbackSection';
 import ResultsSection     from '../components/ResultsSection';
@@ -50,6 +51,12 @@ export default function HomePage() {
 
         {/* SECTION 5: Student Project Gallery */}
         <GallerySection />
+
+        {/* Divider */}
+        <div className="divider" />
+
+        {/* SECTION 5b: Book Tasks — Relationship / Health / Tall Stories */}
+        <BookTasksSection />
 
         {/* Divider */}
         <div className="divider" />
