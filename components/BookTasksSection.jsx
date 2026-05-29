@@ -15,15 +15,23 @@ const HEALTH_TEXT = `Food is an essential part of our daily lives. It provides t
 
 Today, many teenagers have busy schedules. They spend time at school, complete homework, participate in extracurricular activities, and use digital devices for entertainment. Because of this, they often choose convenient foods such as fast food, snacks, and sugary drinks. Although these foods may taste good and save time, they are not always the healthiest option.
 
-Food scientists have discovered that a balanced diet plays a key role in overall health. A balanced diet includes a variety of food groups: carbohydrates for energy, proteins for muscle growth and repair, fats for brain function, vitamins and minerals for the immune system, and water for hydration and cell function.
+Food scientists have discovered that a balanced diet plays an important role in maintaining good health. A balanced diet includes different food groups such as fruits, vegetables, whole grains, dairy products, and sources of protein like meat, fish, eggs, beans, and nuts. Each food group provides specific nutrients that help the body function properly.
 
-Research shows that students who eat a healthy breakfast perform better at school. Breakfast provides the brain with glucose — the primary source of energy for thinking and concentration. Skipping breakfast can lead to poor concentration, fatigue, and lower academic performance.
+For example, fruits and vegetables contain vitamins, minerals, and fiber. These nutrients help strengthen the immune system and protect the body from illness. Whole grains provide energy and help people stay active throughout the day. Protein is necessary for growth and helps repair muscles and tissues. Calcium, which is found in milk, cheese, and yogurt, is important for strong bones and teeth.
 
-Mental health is also connected to food. Studies have found that diets rich in fruits, vegetables, whole grains, and omega-3 fatty acids are associated with lower rates of depression and anxiety. On the other hand, diets high in sugar and processed foods can negatively affect mood and mental well-being.
+Research also shows that eating habits can influence academic performance. Students who eat a healthy breakfast often have better concentration and memory during lessons. Breakfast provides the brain with energy after a long night without food. When students skip breakfast, they may feel tired, distracted, or less motivated to learn.
 
-Physical activity is another essential component of a healthy lifestyle. Experts recommend at least 60 minutes of moderate physical activity per day for teenagers. Exercise improves cardiovascular health, strengthens muscles and bones, reduces stress, and boosts mood through the release of endorphins.
+Another important topic in food science is the relationship between food and mental health. Scientists have found that healthy eating habits can improve mood and reduce stress. Foods rich in vitamins and omega-3 fatty acids, such as fish, nuts, and vegetables, may support brain health and emotional well-being. On the other hand, consuming too much sugar and processed food may negatively affect mood and energy levels.
 
-To build healthy habits, teenagers should aim to eat regular meals, stay hydrated by drinking enough water, limit sugary and processed foods, get enough sleep, and stay physically active. Small, consistent changes in daily habits can lead to significant improvements in health and quality of life.`;
+Hydration is equally important. Water makes up a large part of the human body and is necessary for many bodily functions. Drinking enough water helps regulate body temperature, transport nutrients, and improve concentration. Health experts recommend choosing water instead of sugary soft drinks whenever possible.
+
+Food science also studies how modern food production affects health and the environment. Many food companies are developing healthier products with less sugar, salt, and unhealthy fats. Scientists are researching sustainable farming methods and alternative food sources to ensure that future generations have access to nutritious food.
+
+In addition to healthy eating, regular physical activity is essential for maintaining a healthy lifestyle. Exercise helps the body use energy effectively, strengthens muscles and bones, and improves overall fitness. Teenagers are encouraged to participate in sports, walk regularly, or engage in other forms of physical activity for at least 60 minutes each day.
+
+Developing healthy eating habits does not require dramatic changes. Small steps can make a significant difference. For example, students can choose fruit instead of candy, eat more vegetables with meals, reduce sugary drinks, and drink more water. Over time, these simple choices can improve health and increase energy levels.
+
+In conclusion, food science helps us understand the connection between nutrition and health. By learning about healthy eating habits, teenagers can make informed decisions about their diets and improve both their physical and mental well-being. A balanced diet, sufficient water intake, and regular exercise are key factors in leading a healthy and active life.`;
 
 const HEALTH_TASKS = [
   {
