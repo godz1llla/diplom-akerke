@@ -34,8 +34,8 @@ export default function AdminQuizzesPage() {
     <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
       <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', flexWrap: 'wrap', gap: 12 }}>
         <div>
-          <h1 style={{ color: '#f0f0ff' }}>🧠 Manage Quizzes</h1>
-          <p style={{ color: 'var(--gray-400)', marginTop: 6 }}>Create and manage quizzes for students.</p>
+          <h1 style={{ color: 'var(--gray-900)' }}>🧠 Manage Quizzes</h1>
+          <p style={{ color: 'var(--gray-500)', marginTop: 6 }}>Create and manage quizzes for students.</p>
         </div>
         <Link href="/dashboard/admin/quizzes/create" className="btn btn-primary" id="create-quiz-btn">
           ➕ Create New Quiz
@@ -43,11 +43,11 @@ export default function AdminQuizzesPage() {
       </div>
 
       {loading ? (
-        <p style={{ color: 'var(--gray-400)', textAlign: 'center', padding: 40 }}>Loading...</p>
+        <p style={{ color: 'var(--gray-500)', textAlign: 'center', padding: 40 }}>Loading...</p>
       ) : quizzes.length === 0 ? (
-        <div className="glass-card" style={{ padding: 48, textAlign: 'center' }}>
+        <div className="glass-card" style={{ padding: 48, textAlign: 'center', background: '#fff', border: '1px solid var(--gray-200)' }}>
           <div style={{ fontSize: '3rem', marginBottom: 12 }}>🧠</div>
-          <p style={{ color: 'var(--gray-400)', marginBottom: 20 }}>No quizzes yet. Create your first one!</p>
+          <p style={{ color: 'var(--gray-500)', marginBottom: 20 }}>No quizzes yet. Create your first one!</p>
           <Link href="/dashboard/admin/quizzes/create" className="btn btn-primary" id="first-quiz-btn">
             ➕ Create Quiz
           </Link>
@@ -55,10 +55,10 @@ export default function AdminQuizzesPage() {
       ) : (
         <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
           {quizzes.map(q => (
-            <div key={q.id} className="glass-card" style={{ padding: '20px 24px', display: 'flex', alignItems: 'center', gap: 16 }} id={`quiz-${q.id}`}>
+            <div key={q.id} className="glass-card" style={{ padding: '20px 24px', display: 'flex', alignItems: 'center', gap: 16, background: '#fff', border: '1px solid var(--gray-200)' }} id={`quiz-${q.id}`}>
               <span style={{ fontSize: '1.8rem' }}>🧠</span>
               <div style={{ flex: 1 }}>
-                <div style={{ fontWeight: 700, color: '#f0f0ff', fontSize: '.98rem', marginBottom: 4 }}>{q.title}</div>
+                <div style={{ fontWeight: 700, color: 'var(--gray-900)', fontSize: '.98rem', marginBottom: 4 }}>{q.title}</div>
                 {q.description && <div style={{ fontSize: '.8rem', color: 'var(--gray-500)' }}>{q.description}</div>}
                 <div style={{ display: 'flex', gap: 16, marginTop: 6, fontSize: '.78rem', color: 'var(--gray-500)' }}>
                   <span>❓ {q.quiz_questions?.[0]?.count || 0} questions</span>
@@ -71,7 +71,7 @@ export default function AdminQuizzesPage() {
                   ✏️ Edit
                 </Link>
                 <button onClick={() => handleDelete(q.id)} className="btn btn-sm" id={`delete-quiz-${q.id}`}
-                  style={{ background: 'rgba(244,63,94,.12)', border: '1px solid rgba(244,63,94,.3)', color: 'var(--rose-400)', cursor: 'pointer', borderRadius: 999, padding: '8px 16px', fontFamily: 'var(--font-outfit)', fontSize: '.85rem' }}>
+                  style={{ background: 'rgba(244,63,94,.08)', border: '1px solid rgba(244,63,94,.2)', color: '#e11d48', cursor: 'pointer', borderRadius: 999, padding: '8px 16px', fontFamily: 'var(--font-outfit)', fontSize: '.85rem' }}>
                   🗑️ Delete
                 </button>
               </div>

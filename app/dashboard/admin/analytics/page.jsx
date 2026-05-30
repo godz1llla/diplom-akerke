@@ -52,8 +52,8 @@ export default function AdminAnalyticsPage() {
   return (
     <div style={{ display:'flex', flexDirection:'column', gap:'28px' }}>
       <div>
-        <h1 style={{ color:'#f0f0ff' }}>📈 Analytics</h1>
-        <p style={{ color:'var(--gray-400)', marginTop:'6px' }}>Comprehensive overview of student performance and learning outcomes.</p>
+        <h1 style={{ color:'var(--gray-900)' }}>📈 Analytics</h1>
+        <p style={{ color:'var(--gray-500)', marginTop:'6px' }}>Comprehensive overview of student performance and learning outcomes.</p>
       </div>
 
       {/* Key metrics */}
@@ -64,26 +64,26 @@ export default function AdminAnalyticsPage() {
           { icon:'📝', value:totalAttempts,     label:'Total Quiz Attempts',   color:'#22d3ee' },
           { icon:'🏆', value:data.topStudents[0]?.name?.split(' ')[0] || '—', label:'Top Student', color:'#f59e0b' },
         ].map(s => (
-          <div key={s.label} className="glass-card" style={{ padding:22, textAlign:'center' }}>
+          <div key={s.label} className="glass-card" style={{ padding:22, textAlign:'center', background:'#fff', border:'1px solid var(--gray-200)' }}>
             <div style={{ fontSize:'2rem', marginBottom:8 }}>{s.icon}</div>
             <div style={{ fontSize:'1.8rem', fontWeight:800, color:s.color, marginBottom:4 }}>{s.value}</div>
-            <div style={{ fontSize:'.78rem', color:'var(--gray-400)' }}>{s.label}</div>
+            <div style={{ fontSize:'.78rem', color:'var(--gray-500)' }}>{s.label}</div>
           </div>
         ))}
       </div>
 
       {/* Pre vs Post Test Comparison */}
-      <div className="glass-card" style={{ padding:28 }}>
-        <h3 style={{ color:'#f0f0ff', marginBottom:24 }}>📊 Quiz Performance by Topic</h3>
+      <div className="glass-card" style={{ padding:28, background:'#fff', border:'1px solid var(--gray-200)' }}>
+        <h3 style={{ color:'var(--gray-900)', marginBottom:24 }}>📊 Quiz Performance by Topic</h3>
         {Object.keys(data.avgByQuiz).length === 0 ? (
-          <p style={{ color:'var(--gray-400)', textAlign:'center', padding:24 }}>No quiz data yet.</p>
+          <p style={{ color:'var(--gray-500)', textAlign:'center', padding:24 }}>No quiz data yet.</p>
         ) : Object.entries(data.avgByQuiz).map(([title, d]) => (
           <div key={title} style={{ marginBottom:20 }}>
             <div style={{ display:'flex', justifyContent:'space-between', marginBottom:6, fontSize:'.88rem' }}>
-              <span style={{ color:'var(--gray-200)', fontWeight:600 }}>{title}</span>
-              <span style={{ color: d.avg >= 75 ? 'var(--emerald-400)' : d.avg >= 50 ? 'var(--amber-400)' : 'var(--rose-400)', fontWeight:700 }}>{d.avg}% avg · {d.count} attempts</span>
+              <span style={{ color:'var(--gray-800)', fontWeight:600 }}>{title}</span>
+              <span style={{ color: d.avg >= 75 ? '#059669' : d.avg >= 50 ? '#d97706' : '#e11d48', fontWeight:700 }}>{d.avg}% avg · {d.count} attempts</span>
             </div>
-            <div style={{ height:10, background:'rgba(255,255,255,.06)', borderRadius:999, overflow:'hidden' }}>
+            <div style={{ height:10, background:'var(--gray-100)', borderRadius:999, overflow:'hidden' }}>
               <div style={{ height:'100%', width:`${d.avg}%`, background:'var(--gradient-primary)', borderRadius:999, transition:'width 1.5s ease' }} />
             </div>
           </div>
@@ -92,33 +92,33 @@ export default function AdminAnalyticsPage() {
 
       {/* Top students */}
       <div>
-        <h3 style={{ color:'#f0f0ff', marginBottom:16 }}>🏆 Top Students Leaderboard</h3>
-        <div className="glass-card" style={{ overflow:'hidden' }}>
+        <h3 style={{ color:'var(--gray-900)', marginBottom:16 }}>🏆 Top Students Leaderboard</h3>
+        <div className="glass-card" style={{ overflow:'hidden', background:'#fff', border:'1px solid var(--gray-200)' }}>
           {loading ? (
-            <p style={{ color:'var(--gray-400)', textAlign:'center', padding:32 }}>Loading...</p>
+            <p style={{ color:'var(--gray-500)', textAlign:'center', padding:32 }}>Loading...</p>
           ) : data.topStudents.length === 0 ? (
-            <p style={{ color:'var(--gray-400)', textAlign:'center', padding:32 }}>No data yet.</p>
+            <p style={{ color:'var(--gray-500)', textAlign:'center', padding:32 }}>No data yet.</p>
           ) : (
             <table style={{ width:'100%', borderCollapse:'collapse' }}>
               <thead>
-                <tr style={{ borderBottom:'1px solid var(--bg-border)' }}>
+                <tr style={{ borderBottom:'1px solid var(--gray-200)' }}>
                   {['#','Student','Class','Avg Score','Quizzes Taken'].map(h => (
-                    <th key={h} style={{ padding:'12px 20px', textAlign:'left', fontSize:'.75rem', fontWeight:700, color:'var(--gray-400)', textTransform:'uppercase', letterSpacing:'.06em' }}>{h}</th>
+                    <th key={h} style={{ padding:'12px 20px', textAlign:'left', fontSize:'.75rem', fontWeight:700, color:'var(--gray-500)', textTransform:'uppercase', letterSpacing:'.06em' }}>{h}</th>
                   ))}
                 </tr>
               </thead>
               <tbody>
                 {data.topStudents.map((s, i) => (
-                  <tr key={s.name} style={{ borderBottom: i < data.topStudents.length-1 ? '1px solid rgba(255,255,255,.04)' : 'none' }}>
+                  <tr key={s.name} style={{ borderBottom: '1px solid var(--gray-150)' }}>
                     <td style={{ padding:'12px 20px' }}>
                       <span style={{ fontSize:'1.2rem' }}>{i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : `${i+1}`}</span>
                     </td>
-                    <td style={{ padding:'12px 20px', fontWeight:600, color:'#f0f0ff', fontSize:'.9rem' }}>{s.name}</td>
-                    <td style={{ padding:'12px 20px', color:'var(--gray-400)', fontSize:'.85rem' }}>{s.class || '—'}</td>
+                    <td style={{ padding:'12px 20px', fontWeight:600, color:'var(--gray-900)', fontSize:'.9rem' }}>{s.name}</td>
+                    <td style={{ padding:'12px 20px', color:'var(--gray-600)', fontSize:'.85rem' }}>{s.class || '—'}</td>
                     <td style={{ padding:'12px 20px' }}>
-                      <span style={{ fontWeight:800, color: s.avg >= 75 ? 'var(--emerald-400)' : 'var(--amber-400)', fontSize:'.95rem' }}>{s.avg}%</span>
+                      <span style={{ fontWeight:800, color: s.avg >= 75 ? '#059669' : '#d97706', fontSize:'.95rem' }}>{s.avg}%</span>
                     </td>
-                    <td style={{ padding:'12px 20px', color:'var(--gray-400)', fontSize:'.88rem' }}>{s.count}</td>
+                    <td style={{ padding:'12px 20px', color:'var(--gray-600)', fontSize:'.88rem' }}>{s.count}</td>
                   </tr>
                 ))}
               </tbody>

@@ -66,16 +66,16 @@ export default function CreateQuizPage() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-        <button onClick={() => router.back()} style={{ background: 'none', border: '1px solid var(--bg-border)', color: 'var(--gray-400)', borderRadius: 999, padding: '8px 16px', cursor: 'pointer', fontFamily: 'var(--font-outfit)', fontSize: '.88rem' }}>
+        <button onClick={() => router.back()} style={{ background: 'none', border: '1px solid var(--gray-200)', color: 'var(--gray-600)', borderRadius: 999, padding: '8px 16px', cursor: 'pointer', fontFamily: 'var(--font-outfit)', fontSize: '.88rem' }}>
           ← Back
         </button>
-        <h1 style={{ color: '#f0f0ff' }}>➕ Create New Quiz</h1>
+        <h1 style={{ color: 'var(--gray-900)' }}>➕ Create New Quiz</h1>
       </div>
 
       <form onSubmit={handleSave} id="create-quiz-form">
         {/* Quiz info */}
-        <div className="glass-card" style={{ padding: 28, marginBottom: 20 }}>
-          <h3 style={{ color: '#f0f0ff', marginBottom: 20 }}>Quiz Details</h3>
+        <div className="glass-card" style={{ padding: 28, marginBottom: 20, background: '#fff', border: '1px solid var(--gray-200)' }}>
+          <h3 style={{ color: 'var(--gray-900)', marginBottom: 20 }}>Quiz Details</h3>
           <div style={{ marginBottom: 14 }}>
             <label htmlFor="quiz-title">Quiz Title *</label>
             <input id="quiz-title" value={title} onChange={e => setTitle(e.target.value)}
@@ -91,14 +91,14 @@ export default function CreateQuizPage() {
         {/* Questions */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
           {questions.map((q, i) => (
-            <div key={i} className="glass-card" style={{ padding: 24 }} id={`question-block-${i}`}>
+            <div key={i} className="glass-card" style={{ padding: 24, background: '#fff', border: '1px solid var(--gray-200)' }} id={`question-block-${i}`}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
-                <h4 style={{ color: 'var(--primary-300)', fontSize: '.85rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.06em' }}>
+                <h4 style={{ color: 'var(--primary-700)', fontSize: '.85rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.06em' }}>
                   Question {i + 1}
                 </h4>
                 {questions.length > 1 && (
                   <button type="button" onClick={() => removeQuestion(i)}
-                    style={{ background: 'rgba(244,63,94,.1)', border: '1px solid rgba(244,63,94,.25)', color: 'var(--rose-400)', borderRadius: 999, padding: '4px 12px', cursor: 'pointer', fontSize: '.78rem', fontFamily: 'var(--font-outfit)' }}>
+                    style={{ background: 'rgba(244,63,94,.08)', border: '1px solid rgba(244,63,94,.2)', color: '#e11d48', borderRadius: 999, padding: '4px 12px', cursor: 'pointer', fontSize: '.78rem', fontFamily: 'var(--font-outfit)' }}>
                     🗑️ Remove
                   </button>
                 )}
@@ -115,7 +115,7 @@ export default function CreateQuizPage() {
                 {['a','b','c','d'].map(opt => (
                   <div key={opt}>
                     <label htmlFor={`q${i}-opt${opt}`}>
-                      Option {opt.toUpperCase()} {q.correct === opt && <span style={{ color: 'var(--emerald-400)', fontSize: '.75rem' }}>✓ Correct</span>}
+                      Option {opt.toUpperCase()} {q.correct === opt && <span style={{ color: '#059669', fontSize: '.75rem' }}>✓ Correct</span>}
                     </label>
                     <input id={`q${i}-opt${opt}`} value={q[`option_${opt}`]}
                       onChange={e => updateQ(i, `option_${opt}`, e.target.value)}

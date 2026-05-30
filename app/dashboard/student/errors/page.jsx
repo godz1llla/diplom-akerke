@@ -29,20 +29,18 @@ export default function ErrorJournalPage() {
     if (error) { toast.error('Failed to save. Try again.'); }
     else { toast.success('Entry saved! ✅'); setForm({ error_text: '', correction: '', reason: '', what_learned: '' }); loadEntries(); }
     setSaving(false);
-  };
-
-  return (
+  };  return (
     <div className={styles.page}>
       <div className={styles.pageHeader}>
-        <h1 style={{ color: '#f0f0ff' }}>🔍 Error Analysis Journal</h1>
-        <p style={{ color: 'var(--gray-400)', marginTop: '6px' }}>
+        <h1 style={{ color: 'var(--gray-900)' }}>🔍 Error Analysis Journal</h1>
+        <p style={{ color: 'var(--gray-500)', marginTop: '6px' }}>
           After every quiz, analyze your mistakes here. This develops self-assessment and critical thinking.
         </p>
       </div>
 
       {/* How to use */}
       <div className={`${styles.howTo} glass-card`}>
-        <h4 style={{ color: '#f0f0ff', marginBottom: '14px' }}>📋 How to use this journal</h4>
+        <h4 style={{ color: 'var(--gray-900)', marginBottom: '14px' }}>📋 How to use this journal</h4>
         <div className={styles.steps}>
           {[['1','❌','Write your mistake','Copy the incorrect sentence or answer.'],
             ['2','✅','Write the correction','Rewrite it correctly.'],
@@ -50,8 +48,8 @@ export default function ErrorJournalPage() {
             ['4','📚','What I learned','What did this mistake teach you?']]
             .map(([num, icon, title, desc]) => (
             <div key={num} className={styles.step}>
-              <span className={styles.stepBubble}>{icon}</span>
-              <div><div className={styles.stepTitle}>{title}</div><div className={styles.stepDesc}>{desc}</div></div>
+               <span className={styles.stepBubble}>{icon}</span>
+               <div><div className={styles.stepTitle}>{title}</div><div className={styles.stepDesc}>{desc}</div></div>
             </div>
           ))}
         </div>
@@ -59,7 +57,7 @@ export default function ErrorJournalPage() {
 
       {/* Add entry form */}
       <div className={`${styles.formCard} glass-card`}>
-        <h4 style={{ color: '#f0f0ff', marginBottom: '20px' }}>➕ Add New Entry</h4>
+        <h4 style={{ color: 'var(--gray-900)', marginBottom: '20px' }}>➕ Add New Entry</h4>
         <form onSubmit={handleSave} id="error-journal-form">
           <div className={styles.field}>
             <label htmlFor="ej-error">❌ My Mistake *</label>
@@ -94,13 +92,13 @@ export default function ErrorJournalPage() {
       </div>
 
       {/* Past entries */}
-      <h3 style={{ color: '#f0f0ff' }}>📖 My Journal ({entries.length} entries)</h3>
+      <h3 style={{ color: 'var(--gray-900)' }}>📖 My Journal ({entries.length} entries)</h3>
       {loading ? (
-        <div style={{ color: 'var(--gray-400)', textAlign: 'center', padding: '32px' }}>Loading...</div>
+        <div style={{ color: 'var(--gray-500)', textAlign: 'center', padding: '32px' }}>Loading...</div>
       ) : entries.length === 0 ? (
         <div className={`${styles.emptyState} glass-card`}>
           <div style={{ fontSize: '3rem', marginBottom: '12px' }}>📝</div>
-          <p style={{ color: 'var(--gray-400)' }}>No entries yet. Take a quiz and analyze your mistakes!</p>
+          <p style={{ color: 'var(--gray-500)' }}>No entries yet. Take a quiz and analyze your mistakes!</p>
         </div>
       ) : (
         <div className={styles.entries}>

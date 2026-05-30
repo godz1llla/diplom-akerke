@@ -43,12 +43,13 @@
   --gray-100: #f1f5f9;
   --gray-200: #e2e8f0;
   --gray-300: #cbd5e1;
-  --gray-400: #94a3b8;
-  --gray-500: #64748b;
-  --gray-600: #475569;
-  --gray-700: #334155;
-  --gray-800: #1e293b;
-  --gray-900: #0f172a;
+  --gray-400: #57657a; /* Darker gray for clear visibility */
+  --gray-500: #3b4858; /* Highly visible text gray */
+  --gray-600: #273240;
+  --gray-700: #1a2330;
+  --gray-800: #0f1520;
+  --gray-900: #05070d;
+
 
   /* Light bg system */
   --bg-base:     #f8fafc;
@@ -516,39 +517,11 @@ label {
 [class*="page"] h3,
 [class*="page"] h4,
 [class*="page"] h5,
-[class*="page"] h6,
-[class*="page"] [class*="Title"],
-[class*="page"] [class*="Label"],
-[class*="page"] [class*="Name"],
-[class*="page"] [class*="Text"],
-[class*="page"] [class*="Q"],
-[class*="page"] strong {
-  color: var(--gray-900) !important;
+[class*="page"] h6 {
+  color: var(--gray-900);
 }
 
-[class*="page"] p,
-[class*="page"] [class*="Desc"],
-[class*="page"] [class*="Sub"],
-[class*="page"] [class*="Meta"],
-[class*="page"] [class*="Preview"],
-[class*="page"] [class*="Source"],
-[class*="page"] [class*="Info"],
-[class*="page"] [class*="Date"] {
-  color: var(--gray-500) !important;
-}
-
-/* Fix specific utility overrides */
-[class*="page"] .correct,
-[class*="page"] [class*="correct"],
-[class*="page"] [class*="Correct"] {
-  color: #065f46 !important;
-}
-[class*="page"] .wrong,
-[class*="page"] [class*="wrong"],
-[class*="page"] [class*="Wrong"] {
-  color: #991b1b !important;
-}
-[class*="page"] [class*="Pill"] {
-  color: inherit !important;
+[class*="page"] p {
+  color: var(--gray-600);
 }
 

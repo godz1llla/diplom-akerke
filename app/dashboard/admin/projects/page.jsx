@@ -30,29 +30,29 @@ export default function AdminProjectsPage() {
   return (
     <div style={{ display:'flex', flexDirection:'column', gap:'24px' }}>
       <div>
-        <h1 style={{ color:'#f0f0ff' }}>📁 Student Projects</h1>
-        <p style={{ color:'var(--gray-400)', marginTop:'6px' }}>Review and give feedback on all submitted projects.</p>
+        <h1 style={{ color:'var(--gray-900)' }}>📁 Student Projects</h1>
+        <p style={{ color:'var(--gray-500)', marginTop:'6px' }}>Review and give feedback on all submitted projects.</p>
       </div>
 
       {loading ? (
-        <p style={{ color:'var(--gray-400)', textAlign:'center', padding:'32px' }}>Loading...</p>
+        <p style={{ color:'var(--gray-500)', textAlign:'center', padding:'32px' }}>Loading...</p>
       ) : projects.length === 0 ? (
-        <div className="glass-card" style={{ padding:'48px', textAlign:'center' }}>
+        <div className="glass-card" style={{ padding:'48px', textAlign:'center', background:'#fff', border:'1px solid var(--gray-200)' }}>
           <div style={{ fontSize:'3rem', marginBottom:'12px' }}>📁</div>
-          <p style={{ color:'var(--gray-400)' }}>No projects submitted yet.</p>
+          <p style={{ color:'var(--gray-500)' }}>No projects submitted yet.</p>
         </div>
       ) : (
         <div style={{ display:'flex', flexDirection:'column', gap:'16px' }}>
           {projects.map(p => (
-            <div key={p.id} className="glass-card" style={{ padding:'24px' }} id={`admin-proj-${p.id}`}>
+            <div key={p.id} className="glass-card" style={{ padding:'24px', background:'#fff', border:'1px solid var(--gray-200)' }} id={`admin-proj-${p.id}`}>
               <div style={{ display:'flex', alignItems:'flex-start', gap:'16px', marginBottom:'16px' }}>
                 <span style={{ fontSize:'2rem' }}>{TYPE_ICONS[p.project_type] || '📦'}</span>
                 <div style={{ flex:1 }}>
-                  <div style={{ fontWeight:700, color:'#f0f0ff', fontSize:'1rem', marginBottom:'4px' }}>{p.title}</div>
-                  <div style={{ fontSize:'.8rem', color:'var(--gray-400)' }}>
+                  <div style={{ fontWeight:700, color:'var(--gray-900)', fontSize:'1rem', marginBottom:'4px' }}>{p.title}</div>
+                  <div style={{ fontSize:'.8rem', color:'var(--gray-500)' }}>
                     👤 {p.profiles?.full_name} {p.profiles?.class ? `· ${p.profiles.class}` : ''} · {new Date(p.created_at).toLocaleDateString()} · <em>{p.project_type}</em>
                   </div>
-                  {p.description && <p style={{ fontSize:'.84rem', color:'var(--gray-400)', marginTop:'8px', lineHeight:1.55 }}>{p.description}</p>}
+                  {p.description && <p style={{ fontSize:'.84rem', color:'var(--gray-700)', marginTop:'8px', lineHeight:1.55 }}>{p.description}</p>}
                 </div>
               </div>
 
@@ -62,9 +62,9 @@ export default function AdminProjectsPage() {
               </div>
 
               {/* Feedback form */}
-              <div style={{ borderTop:'1px solid var(--bg-border)', paddingTop:'16px', display:'grid', gridTemplateColumns:'1fr auto', gap:'12px', alignItems:'end' }}>
+              <div style={{ borderTop:'1px solid var(--gray-200)', paddingTop:'16px', display:'grid', gridTemplateColumns:'1fr auto', gap:'12px', alignItems:'end' }}>
                 <div>
-                  <label htmlFor={`grade-${p.id}`} style={{ fontSize:'.78rem', marginBottom:'4px', display:'block', color:'var(--gray-400)' }}>Grade</label>
+                  <label htmlFor={`grade-${p.id}`} style={{ fontSize:'.78rem', marginBottom:'4px', display:'block', color:'var(--gray-600)' }}>Grade</label>
                   <select id={`grade-${p.id}`}
                     defaultValue={p.grade || ''}
                     onChange={e=>setGrades(prev=>({...prev,[p.id]:e.target.value}))}
@@ -74,7 +74,7 @@ export default function AdminProjectsPage() {
                   </select>
                 </div>
                 <div style={{ flex:1, gridColumn:'1 / -1' }}>
-                  <label htmlFor={`fb-${p.id}`} style={{ fontSize:'.78rem', marginBottom:'4px', display:'block', color:'var(--gray-400)' }}>Teacher Feedback</label>
+                  <label htmlFor={`fb-${p.id}`} style={{ fontSize:'.78rem', marginBottom:'4px', display:'block', color:'var(--gray-600)' }}>Teacher Feedback</label>
                   <div style={{ display:'flex', gap:'10px' }}>
                     <textarea id={`fb-${p.id}`} rows={2} defaultValue={p.feedback || ''}
                       onChange={e=>setFeedback(prev=>({...prev,[p.id]:e.target.value}))}

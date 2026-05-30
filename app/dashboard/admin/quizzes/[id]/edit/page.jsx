@@ -55,18 +55,18 @@ export default function EditQuizPage() {
     router.push('/dashboard/admin/quizzes');
   };
 
-  if (loading) return <div style={{ textAlign:'center', padding:60, color:'var(--gray-400)' }}>Loading...</div>;
+  if (loading) return <div style={{ textAlign:'center', padding:60, color:'var(--gray-500)' }}>Loading...</div>;
 
   return (
     <div style={{ display:'flex', flexDirection:'column', gap:24 }}>
       <div style={{ display:'flex', alignItems:'center', gap:16 }}>
-        <button onClick={() => router.back()} style={{ background:'none', border:'1px solid var(--bg-border)', color:'var(--gray-400)', borderRadius:999, padding:'8px 16px', cursor:'pointer', fontFamily:'var(--font-outfit)', fontSize:'.88rem' }}>← Back</button>
-        <h1 style={{ color:'#f0f0ff' }}>✏️ Edit Quiz</h1>
+        <button onClick={() => router.back()} style={{ background:'none', border:'1px solid var(--gray-200)', color:'var(--gray-600)', borderRadius:999, padding:'8px 16px', cursor:'pointer', fontFamily:'var(--font-outfit)', fontSize:'.88rem' }}>← Back</button>
+        <h1 style={{ color:'var(--gray-900)' }}>✏️ Edit Quiz</h1>
       </div>
 
       <form onSubmit={handleSave} id="edit-quiz-form">
-        <div className="glass-card" style={{ padding:28, marginBottom:20 }}>
-          <h3 style={{ color:'#f0f0ff', marginBottom:16 }}>Quiz Details</h3>
+        <div className="glass-card" style={{ padding:28, marginBottom:20, background:'#fff', border:'1px solid var(--gray-200)' }}>
+          <h3 style={{ color:'var(--gray-900)', marginBottom:16 }}>Quiz Details</h3>
           <div style={{ marginBottom:14 }}>
             <label htmlFor="eq-title">Title *</label>
             <input id="eq-title" value={quiz.title} onChange={e=>setQuiz(p=>({...p,title:e.target.value}))} required />
@@ -79,11 +79,11 @@ export default function EditQuizPage() {
 
         <div style={{ display:'flex', flexDirection:'column', gap:14 }}>
           {questions.map((q, i) => (
-            <div key={q.id || i} className="glass-card" style={{ padding:22 }} id={`eq-q-${i}`}>
+            <div key={q.id || i} className="glass-card" style={{ padding:22, background:'#fff', border:'1px solid var(--gray-200)' }} id={`eq-q-${i}`}>
               <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:14 }}>
-                <span style={{ fontSize:'.82rem', fontWeight:700, color:'var(--primary-300)', textTransform:'uppercase', letterSpacing:'.06em' }}>Question {i+1}</span>
+                <span style={{ fontSize:'.82rem', fontWeight:700, color:'var(--primary-700)', textTransform:'uppercase', letterSpacing:'.06em' }}>Question {i+1}</span>
                 <button type="button" onClick={() => removeQ(i)}
-                  style={{ background:'rgba(244,63,94,.1)', border:'1px solid rgba(244,63,94,.25)', color:'var(--rose-400)', borderRadius:999, padding:'3px 10px', cursor:'pointer', fontSize:'.75rem', fontFamily:'var(--font-outfit)' }}>
+                  style={{ background:'rgba(244,63,94,.08)', border:'1px solid rgba(244,63,94,.2)', color:'#e11d48', borderRadius:999, padding:'3px 10px', cursor:'pointer', fontSize:'.75rem', fontFamily:'var(--font-outfit)' }}>
                   🗑️ Remove
                 </button>
               </div>

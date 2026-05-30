@@ -57,16 +57,16 @@ export default function AdminTextsPage() {
     <div style={{ display:'flex', flexDirection:'column', gap:24 }}>
       <div style={{ display:'flex', alignItems:'flex-start', justifyContent:'space-between', flexWrap:'wrap', gap:12 }}>
         <div>
-          <h1 style={{ color:'#f0f0ff' }}>📖 Reading Texts</h1>
-          <p style={{ color:'var(--gray-400)', marginTop:6 }}>Create and manage reading texts for students.</p>
+          <h1 style={{ color:'var(--gray-900)' }}>📖 Reading Texts</h1>
+          <p style={{ color:'var(--gray-500)', marginTop:6 }}>Create and manage reading texts for students.</p>
         </div>
         <button onClick={openCreate} className="btn btn-primary" id="create-text-btn">➕ Add New Text</button>
       </div>
 
       {/* Create/Edit Form */}
       {showForm && (
-        <div className="glass-card" style={{ padding:28 }}>
-          <h3 style={{ color:'#f0f0ff', marginBottom:20 }}>{editText ? '✏️ Edit Text' : '➕ Create Text'}</h3>
+        <div className="glass-card" style={{ padding:28, background:'#fff', border:'1px solid var(--gray-200)' }}>
+          <h3 style={{ color:'var(--gray-900)', marginBottom:20 }}>{editText ? '✏️ Edit Text' : '➕ Create Text'}</h3>
           <form onSubmit={handleSave} id="text-form">
             <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:14, marginBottom:14 }}>
               <div>
@@ -111,16 +111,16 @@ export default function AdminTextsPage() {
 
       {/* Texts list */}
       {loading ? (
-        <p style={{ color:'var(--gray-400)', textAlign:'center', padding:40 }}>Loading...</p>
+        <p style={{ color:'var(--gray-500)', textAlign:'center', padding:40 }}>Loading...</p>
       ) : texts.length === 0 && !showForm ? (
-        <div className="glass-card" style={{ padding:48, textAlign:'center' }}>
+        <div className="glass-card" style={{ padding:48, textAlign:'center', background:'#fff', border:'1px solid var(--gray-200)' }}>
           <div style={{ fontSize:'3rem', marginBottom:12 }}>📖</div>
-          <p style={{ color:'var(--gray-400)' }}>No texts yet. Create your first reading text!</p>
+          <p style={{ color:'var(--gray-500)' }}>No texts yet. Create your first reading text!</p>
         </div>
       ) : (
         <div style={{ display:'flex', flexDirection:'column', gap:12 }}>
           {texts.map(t => (
-            <div key={t.id} className="glass-card" style={{ padding:'18px 22px', display:'flex', alignItems:'flex-start', gap:16 }} id={`text-item-${t.id}`}>
+            <div key={t.id} className="glass-card" style={{ padding:'18px 22px', display:'flex', alignItems:'flex-start', gap:16, background:'#fff', border:'1px solid var(--gray-200)' }} id={`text-item-${t.id}`}>
               <div style={{ flex:1 }}>
                 <div style={{ display:'flex', alignItems:'center', gap:10, marginBottom:6 }}>
                   <span style={{ fontSize:'.72rem', fontWeight:700, padding:'2px 8px', borderRadius:999, background:`${LEVEL_COLORS[t.level]}18`, color:LEVEL_COLORS[t.level], border:`1px solid ${LEVEL_COLORS[t.level]}33`, textTransform:'uppercase' }}>
@@ -128,7 +128,7 @@ export default function AdminTextsPage() {
                   </span>
                   {t.topic && <span style={{ fontSize:'.78rem', color:'var(--gray-500)' }}>📌 {t.topic}</span>}
                 </div>
-                <div style={{ fontWeight:700, color:'#f0f0ff', marginBottom:4 }}>{t.title}</div>
+                <div style={{ fontWeight:700, color:'var(--gray-900)', marginBottom:4 }}>{t.title}</div>
                 <div style={{ fontSize:'.8rem', color:'var(--gray-500)' }}>
                   {t.content.slice(0, 100)}... · {t.content.length} chars · {new Date(t.created_at).toLocaleDateString()}
                 </div>
@@ -136,7 +136,7 @@ export default function AdminTextsPage() {
               <div style={{ display:'flex', gap:8, flexShrink:0 }}>
                 <button onClick={() => openEdit(t)} className="btn btn-secondary btn-sm" id={`edit-text-${t.id}`}>✏️ Edit</button>
                 <button onClick={() => handleDelete(t.id)} className="btn btn-sm" id={`del-text-${t.id}`}
-                  style={{ background:'rgba(244,63,94,.1)', border:'1px solid rgba(244,63,94,.3)', color:'var(--rose-400)', cursor:'pointer', borderRadius:999, padding:'8px 14px', fontFamily:'var(--font-outfit)', fontSize:'.82rem' }}>
+                  style={{ background:'rgba(244,63,94,.08)', border:'1px solid rgba(244,63,94,.2)', color:'#e11d48', cursor:'pointer', borderRadius:999, padding:'8px 14px', fontFamily:'var(--font-outfit)', fontSize:'.82rem' }}>
                   🗑️
                 </button>
               </div>

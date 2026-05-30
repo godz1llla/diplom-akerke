@@ -53,7 +53,7 @@ export default function AdminDashboard() {
           <div key={s.label} className={`${styles.statCard} glass-card`}>
             <div style={{ fontSize:'2rem', color:s.color, marginBottom:8 }}>{s.icon}</div>
             <div style={{ fontSize:'2.4rem', fontWeight:800, color:s.color, marginBottom:4 }}>{s.value}</div>
-            <div style={{ fontSize:'.8rem', color:'var(--gray-400)', fontWeight:500 }}>{s.label}</div>
+            <div style={{ fontSize:'.8rem', color:'var(--gray-500)', fontWeight:500 }}>{s.label}</div>
           </div>
         ))}
       </div>
@@ -89,12 +89,12 @@ export default function AdminDashboard() {
                     {p.profiles?.full_name} {p.profiles?.class ? `· ${p.profiles.class}` : ''} · {new Date(p.created_at).toLocaleDateString()}
                   </div>
                 </div>
-                <span style={{ marginLeft:'auto', fontSize:'.72rem', textTransform:'capitalize', color:'var(--primary-300)', background:'rgba(98,68,235,.12)', padding:'3px 8px', borderRadius:'999px', flexShrink:0 }}>
+                <span style={{ marginLeft:'auto', fontSize:'.72rem', textTransform:'capitalize', color:'var(--primary-700)', background:'rgba(98,68,235,.08)', padding:'3px 8px', borderRadius:'999px', flexShrink:0 }}>
                   {p.project_type}
                 </span>
               </div>
             ))}
-            <Link href="/dashboard/admin/projects" style={{ display:'block', textAlign:'center', marginTop:14, fontSize:'.82rem', color:'var(--primary-300)', fontWeight:600, textDecoration:'none' }}>
+            <Link href="/dashboard/admin/projects" style={{ display:'block', textAlign:'center', marginTop:14, fontSize:'.82rem', color:'var(--primary-700)', fontWeight:600, textDecoration:'none' }}>
               View all →
             </Link>
           </div>
@@ -115,13 +115,13 @@ export default function AdminDashboard() {
                     <div style={{ fontSize:'.88rem', fontWeight:600, color:'var(--gray-800)' }}>{r.profiles?.full_name}</div>
                     <div style={{ fontSize:'.75rem', color:'var(--gray-500)' }}>{r.quizzes?.title} · {new Date(r.completed_at).toLocaleDateString()}</div>
                   </div>
-                  <span style={{ marginLeft:'auto', fontWeight:800, fontSize:'.9rem', color: pct >= 75 ? 'var(--emerald-400)' : pct >= 50 ? 'var(--amber-400)' : 'var(--rose-400)', flexShrink:0 }}>
+                  <span style={{ marginLeft:'auto', fontWeight:800, fontSize:'.9rem', color: pct >= 75 ? '#059669' : pct >= 50 ? '#d97706' : '#e11d48', flexShrink:0 }}>
                     {pct}%
                   </span>
                 </div>
               );
             })}
-            <Link href="/dashboard/admin/analytics" style={{ display:'block', textAlign:'center', marginTop:14, fontSize:'.82rem', color:'var(--primary-300)', fontWeight:600, textDecoration:'none' }}>
+            <Link href="/dashboard/admin/analytics" style={{ display:'block', textAlign:'center', marginTop:14, fontSize:'.82rem', color:'var(--primary-700)', fontWeight:600, textDecoration:'none' }}>
               View analytics →
             </Link>
           </div>

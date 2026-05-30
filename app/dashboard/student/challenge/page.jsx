@@ -35,8 +35,8 @@ export default function ChallengePage() {
   return (
     <div style={{ display:'flex', flexDirection:'column', gap:'28px' }}>
       <div>
-        <h1 style={{ color:'#f0f0ff' }}>🎥 2-Week Creative Challenge</h1>
-        <p style={{ color:'var(--gray-400)', marginTop:'6px' }}>
+        <h1 style={{ color:'var(--gray-900)' }}>🎥 2-Week Creative Challenge</h1>
+        <p style={{ color:'var(--gray-500)', marginTop:'6px' }}>
           Create a TikTok or vlog about your chosen topic. Week 1: record. Week 2: share and discuss.
         </p>
       </div>
@@ -53,8 +53,8 @@ export default function ChallengePage() {
       </div>
 
       {/* Instructions */}
-      <div className="glass-card" style={{ padding:24 }}>
-        <h4 style={{ color:'#f0f0ff', marginBottom:14 }}>
+      <div className="glass-card" style={{ padding:24, background:'#fff', border:'1px solid var(--gray-200)' }}>
+        <h4 style={{ color:'var(--gray-900)', marginBottom:14 }}>
           {week===1 ? '🎬 Week 1 — Plan & Record' : '🚀 Week 2 — Share & Discuss'}
         </h4>
         <div style={{ display:'flex', flexDirection:'column', gap:10 }}>
@@ -73,7 +73,7 @@ export default function ChallengePage() {
           ]).map((step, i) => (
             <div key={i} style={{ display:'flex', alignItems:'flex-start', gap:12 }}>
               <span style={{ width:24, height:24, borderRadius:'50%', background:'var(--gradient-primary)', display:'flex', alignItems:'center', justifyContent:'center', fontSize:'.72rem', fontWeight:800, color:'#fff', flexShrink:0 }}>{i+1}</span>
-              <span style={{ fontSize:'.9rem', color:'var(--gray-300)' }}>{step}</span>
+              <span style={{ fontSize:'.9rem', color:'var(--gray-700)' }}>{step}</span>
             </div>
           ))}
         </div>
@@ -81,19 +81,20 @@ export default function ChallengePage() {
 
       {/* Topic selection */}
       <div>
-        <h3 style={{ color:'#f0f0ff', marginBottom:14 }}>📌 Choose Your Topic</h3>
+        <h3 style={{ color:'var(--gray-900)', marginBottom:14 }}>📌 Choose Your Topic</h3>
         <div style={{ display:'grid', gridTemplateColumns:'repeat(2,1fr)', gap:12 }}>
           {TOPICS.map(t => (
             <button key={t.id} onClick={()=>setTopic(t.id)}
               id={`topic-${t.id}`}
               style={{
                 display:'flex', alignItems:'center', gap:14, padding:'16px 20px',
-                background: topic===t.id ? `${t.color}18` : 'rgba(30,30,66,.6)',
-                border: `1px solid ${topic===t.id ? t.color : 'rgba(124,106,245,.18)'}`,
+                background: topic===t.id ? `${t.color}12` : '#fff',
+                border: `1px solid ${topic===t.id ? t.color : 'var(--gray-200)'}`,
                 borderRadius:16, cursor:'pointer', textAlign:'left', transition:'all .2s',
+                boxShadow:'var(--shadow-sm)',
               }}>
               <span style={{ fontSize:'1.8rem', color:t.color }}>{t.icon}</span>
-              <span style={{ fontWeight:600, color: topic===t.id ? t.color : '#f0f0ff' }}>{t.title}</span>
+              <span style={{ fontWeight:600, color: topic===t.id ? t.color : 'var(--gray-800)' }}>{t.title}</span>
               {topic===t.id && <span style={{ marginLeft:'auto', color:t.color }}>✓</span>}
             </button>
           ))}
@@ -101,8 +102,8 @@ export default function ChallengePage() {
       </div>
 
       {/* Submit form */}
-      <div className="glass-card" style={{ padding:24 }}>
-        <h4 style={{ color:'#f0f0ff', marginBottom:16 }}>📤 Submit Week {week} Work</h4>
+      <div className="glass-card" style={{ padding:24, background:'#fff', border:'1px solid var(--gray-200)' }}>
+        <h4 style={{ color:'var(--gray-900)', marginBottom:16 }}>📤 Submit Week {week} Work</h4>
         <form onSubmit={handleSubmit} id="challenge-form">
           <div style={{ marginBottom:14 }}>
             <label htmlFor="ch-video">🎥 Video / TikTok Link</label>

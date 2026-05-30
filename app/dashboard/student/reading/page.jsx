@@ -40,7 +40,7 @@ export default function ReadingPage() {
 
           <div className={styles.readerContent}>
             {activeText.content.split('\n\n').map((para, i) => (
-              <p key={i} style={{ marginBottom: '16px', color: para.startsWith('Discussion') || para.startsWith('Critical') ? 'var(--accent-400)' : 'var(--gray-300)', fontWeight: para.startsWith('Discussion') || para.startsWith('Critical') ? 600 : 400 }}>
+              <p key={i} style={{ marginBottom: '16px', color: para.startsWith('Discussion') || para.startsWith('Critical') ? 'var(--primary-600)' : 'var(--gray-800)', fontWeight: para.startsWith('Discussion') || para.startsWith('Critical') ? 600 : 400 }}>
                 {para}
               </p>
             ))}
@@ -48,20 +48,20 @@ export default function ReadingPage() {
         </div>
 
         <div className={styles.afterRead}>
-          <h3 style={{ color: '#f0f0ff', marginBottom: '16px' }}>✅ Finished reading? What's next?</h3>
+          <h3 style={{ color: 'var(--gray-900)', marginBottom: '16px' }}>✅ Finished reading? What's next?</h3>
           <div className={styles.nextSteps}>
             <Link href="/dashboard/student/quiz" className={`${styles.nextBtn} glass-card`} id="go-to-quiz">
               <span>🧠</span>
               <div>
-                <div style={{ fontWeight: 700, color: '#f0f0ff' }}>Take the Quiz</div>
-                <div style={{ fontSize: '0.8rem', color: 'var(--gray-400)' }}>Test your comprehension</div>
+                <div style={{ fontWeight: 700, color: 'var(--gray-900)' }}>Take the Quiz</div>
+                <div style={{ fontSize: '0.8rem', color: 'var(--gray-500)' }}>Test your comprehension</div>
               </div>
             </Link>
             <Link href="/dashboard/student/errors" className={`${styles.nextBtn} glass-card`} id="go-to-journal">
               <span>🔍</span>
               <div>
-                <div style={{ fontWeight: 700, color: '#f0f0ff' }}>Open Error Journal</div>
-                <div style={{ fontSize: '0.8rem', color: 'var(--gray-400)' }}>Analyze and reflect</div>
+                <div style={{ fontWeight: 700, color: 'var(--gray-900)' }}>Open Error Journal</div>
+                <div style={{ fontSize: '0.8rem', color: 'var(--gray-500)' }}>Analyze and reflect</div>
               </div>
             </Link>
           </div>
@@ -73,30 +73,30 @@ export default function ReadingPage() {
   return (
     <div className={styles.page}>
       <div className={styles.pageHeader}>
-        <h1 style={{ color: '#f0f0ff' }}>📖 Reading Texts</h1>
-        <p style={{ color: 'var(--gray-400)', marginTop: '6px' }}>Choose a text to read, then take the quiz to test your comprehension.</p>
+        <h1 style={{ color: 'var(--gray-900)' }}>📖 Reading Texts</h1>
+        <p style={{ color: 'var(--gray-500)', marginTop: '6px' }}>Choose a text to read, then take the quiz to test your comprehension.</p>
       </div>
 
       <div className={styles.externalLinks}>
         <a href="https://newsela.com" target="_blank" rel="noopener noreferrer" className={`${styles.extCard} glass-card`} id="newsela-link">
           <span style={{ fontSize: '2rem' }}>📰</span>
           <div>
-            <div style={{ fontWeight: 700, color: '#f0f0ff' }}>Newsela</div>
-            <div style={{ fontSize: '0.78rem', color: 'var(--gray-400)' }}>Leveled news articles</div>
+            <div style={{ fontWeight: 700, color: 'var(--gray-900)' }}>Newsela</div>
+            <div style={{ fontSize: '0.78rem', color: 'var(--gray-500)' }}>Leveled news articles</div>
           </div>
-          <span style={{ marginLeft: 'auto', color: 'var(--gray-500)', fontSize: '0.8rem' }}>↗ Open</span>
+          <span style={{ marginLeft: 'auto', color: 'var(--gray-600)', fontSize: '0.8rem' }}>↗ Open</span>
         </a>
         <a href="https://www.bbc.co.uk/learningenglish" target="_blank" rel="noopener noreferrer" className={`${styles.extCard} glass-card`} id="bbc-link">
           <span style={{ fontSize: '2rem' }}>🎙️</span>
           <div>
-            <div style={{ fontWeight: 700, color: '#f0f0ff' }}>BBC Learning English</div>
-            <div style={{ fontSize: '0.78rem', color: 'var(--gray-400)' }}>Authentic English materials</div>
+            <div style={{ fontWeight: 700, color: 'var(--gray-900)' }}>BBC Learning English</div>
+            <div style={{ fontSize: '0.78rem', color: 'var(--gray-500)' }}>Authentic English materials</div>
           </div>
-          <span style={{ marginLeft: 'auto', color: 'var(--gray-500)', fontSize: '0.8rem' }}>↗ Open</span>
+          <span style={{ marginLeft: 'auto', color: 'var(--gray-600)', fontSize: '0.8rem' }}>↗ Open</span>
         </a>
       </div>
 
-      <h2 style={{ color: '#f0f0ff', fontSize: '1.1rem', fontWeight: 700, marginTop: '8px' }}>📄 Platform Texts</h2>
+      <h2 style={{ color: 'var(--gray-900)', fontSize: '1.1rem', fontWeight: 700, marginTop: '8px' }}>📄 Platform Texts</h2>
       <div className={styles.textGrid}>
         {texts.map((text) => (
           <div key={text.id} className={`${styles.textCard} glass-card`} id={`text-${text.id}`}>

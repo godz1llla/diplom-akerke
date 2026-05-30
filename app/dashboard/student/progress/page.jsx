@@ -38,8 +38,8 @@ export default function ProgressPage() {
   return (
     <div style={{ display:'flex', flexDirection:'column', gap:'28px' }}>
       <div>
-        <h1 style={{ color:'#f0f0ff' }}>📊 My Progress</h1>
-        <p style={{ color:'var(--gray-400)', marginTop:'6px' }}>Track your growth across all learning activities.</p>
+        <h1 style={{ color:'var(--gray-900)' }}>📊 My Progress</h1>
+        <p style={{ color:'var(--gray-500)', marginTop:'6px' }}>Track your growth across all learning activities.</p>
       </div>
 
       {/* Summary stats */}
@@ -50,35 +50,35 @@ export default function ProgressPage() {
           { icon:'📁', value:projects.length,   label:'Projects Uploaded', color:'#10b981' },
           { icon:'📝', value:journals.length,   label:'Journal Entries',   color:'#f59e0b' },
         ].map(s => (
-          <div key={s.label} className="glass-card" style={{ padding:22, textAlign:'center' }}>
+          <div key={s.label} className="glass-card" style={{ padding:22, textAlign:'center', background:'#fff', border:'1px solid var(--gray-200)' }}>
             <div style={{ fontSize:'2rem', marginBottom:8 }}>{s.icon}</div>
             <div style={{ fontSize:'2.2rem', fontWeight:800, color:s.color, marginBottom:4 }}>{s.value}</div>
-            <div style={{ fontSize:'.78rem', color:'var(--gray-400)' }}>{s.label}</div>
+            <div style={{ fontSize:'.78rem', color:'var(--gray-500)' }}>{s.label}</div>
           </div>
         ))}
       </div>
 
       {/* Skills progress (pre vs estimated post) */}
-      <div className="glass-card" style={{ padding:28 }}>
-        <h3 style={{ color:'#f0f0ff', marginBottom:24 }}>📈 Skills Development (Estimated)</h3>
+      <div className="glass-card" style={{ padding:28, background:'#fff', border:'1px solid var(--gray-200)' }}>
+        <h3 style={{ color:'var(--gray-900)', marginBottom:24 }}>📈 Skills Development (Estimated)</h3>
         <div style={{ display:'flex', flexDirection:'column', gap:20 }}>
           {SKILLS.map(s => (
             <div key={s.label}>
               <div style={{ display:'flex', justifyContent:'space-between', marginBottom:6, fontSize:'.88rem' }}>
-                <span style={{ color:'var(--gray-200)', fontWeight:600 }}>{s.icon} {s.label}</span>
-                <span style={{ color:'var(--gray-400)' }}>
+                <span style={{ color:'var(--gray-800)', fontWeight:600 }}>{s.icon} {s.label}</span>
+                <span style={{ color:'var(--gray-500)' }}>
                   <span style={{ color:'var(--gray-600)' }}>Before: {s.pre}%</span>
                   {' → '}
                   <span style={{ color:s.color, fontWeight:700 }}>Now: {s.post}%</span>
                 </span>
               </div>
-              <div style={{ height:8, background:'rgba(255,255,255,.05)', borderRadius:999, overflow:'hidden', marginBottom:4 }}>
+              <div style={{ height:8, background:'var(--gray-100)', borderRadius:999, overflow:'hidden', marginBottom:4 }}>
                 <div style={{ display:'flex', height:'100%' }}>
                   <div style={{ width:`${s.pre}%`, background:'rgba(124,106,245,.2)', transition:'width 1.5s ease' }} />
                   <div style={{ width:`${s.post-s.pre}%`, background:`linear-gradient(90deg, ${s.color}88, ${s.color})`, transition:'width 1.5s ease' }} />
                 </div>
               </div>
-              <div style={{ fontSize:'.75rem', color:'var(--emerald-400)', fontWeight:700 }}>
+              <div style={{ fontSize:'.75rem', color:'var(--emerald-600)', fontWeight:700 }}>
                 +{s.post - s.pre}% growth
               </div>
             </div>
@@ -88,29 +88,29 @@ export default function ProgressPage() {
 
       {/* Quiz history */}
       <div>
-        <h3 style={{ color:'#f0f0ff', marginBottom:14 }}>🧠 Quiz History</h3>
+        <h3 style={{ color:'var(--gray-900)', marginBottom:14 }}>🧠 Quiz History</h3>
         {loading ? (
-          <p style={{ color:'var(--gray-400)', textAlign:'center', padding:24 }}>Loading...</p>
+          <p style={{ color:'var(--gray-500)', textAlign:'center', padding:24 }}>Loading...</p>
         ) : results.length === 0 ? (
-          <div className="glass-card" style={{ padding:'40px', textAlign:'center' }}>
+          <div className="glass-card" style={{ padding:'40px', textAlign:'center', background:'#fff', border:'1px solid var(--gray-200)' }}>
             <div style={{ fontSize:'3rem', marginBottom:12 }}>🧠</div>
-            <p style={{ color:'var(--gray-400)' }}>No quizzes taken yet. <a href="/dashboard/student/quiz" style={{ color:'var(--primary-300)' }}>Take your first quiz →</a></p>
+            <p style={{ color:'var(--gray-500)' }}>No quizzes taken yet. <a href="/dashboard/student/quiz" style={{ color:'var(--primary-600)' }}>Take your first quiz →</a></p>
           </div>
         ) : (
           <div style={{ display:'flex', flexDirection:'column', gap:10 }}>
             {results.map((r, i) => {
               const pct = Math.round(r.percentage || 0);
               return (
-                <div key={r.id} className="glass-card" style={{ padding:'16px 22px', display:'flex', alignItems:'center', gap:16 }} id={`result-row-${r.id}`}>
+                <div key={r.id} className="glass-card" style={{ padding:'16px 22px', display:'flex', alignItems:'center', gap:16, background:'#fff', border:'1px solid var(--gray-200)' }} id={`result-row-${r.id}`}>
                   <span style={{ fontSize:'1.3rem' }}>{pct >= 75 ? '🎉' : pct >= 50 ? '📚' : '🔍'}</span>
                   <div style={{ flex:1 }}>
-                    <div style={{ fontWeight:600, color:'#f0f0ff', fontSize:'.9rem', marginBottom:2 }}>{r.quizzes?.title}</div>
-                    <div style={{ height:4, background:'rgba(255,255,255,.05)', borderRadius:999, overflow:'hidden', maxWidth:200 }}>
+                    <div style={{ fontWeight:600, color:'var(--gray-800)', fontSize:'.9rem', marginBottom:2 }}>{r.quizzes?.title}</div>
+                    <div style={{ height:4, background:'var(--gray-100)', borderRadius:999, overflow:'hidden', maxWidth:200 }}>
                       <div style={{ height:'100%', width:`${pct}%`, background:'var(--gradient-primary)', borderRadius:999 }} />
                     </div>
                   </div>
                   <div style={{ textAlign:'right' }}>
-                    <div style={{ fontWeight:800, fontSize:'1.1rem', color: pct>=75?'var(--emerald-400)':pct>=50?'var(--amber-400)':'var(--rose-400)' }}>{pct}%</div>
+                    <div style={{ fontWeight:800, fontSize:'1.1rem', color: pct>=75?'var(--emerald-600)':pct>=50?'var(--amber-600)':'var(--rose-600)' }}>{pct}%</div>
                     <div style={{ fontSize:'.72rem', color:'var(--gray-600)' }}>{r.score}/{r.total} · {new Date(r.completed_at).toLocaleDateString()}</div>
                   </div>
                 </div>

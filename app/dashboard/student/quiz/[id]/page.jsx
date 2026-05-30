@@ -104,11 +104,11 @@ export default function QuizDetailPage() {
             <div className={styles.scoreNum}>{result.pct}%</div>
           </div>
           <div>
-            <h2 style={{ color:'#f0f0ff', marginBottom:6 }}>
+            <h2 style={{ color:'var(--gray-900)', marginBottom:6 }}>
               {result.pct >= 75 ? '🎉 Excellent!' : result.pct >= 50 ? '📚 Good effort!' : '🔍 Keep learning!'}
             </h2>
-            <p style={{ color:'var(--gray-400)', marginBottom:16 }}>
-              You got <strong style={{ color:'var(--primary-300)' }}>{result.score}/{result.total}</strong> correct.
+            <p style={{ color:'var(--gray-500)', marginBottom:16 }}>
+              You got <strong style={{ color:'var(--primary-600)' }}>{result.score}/{result.total}</strong> correct.
               Review the explanations below, then open your Error Journal.
             </p>
             <div style={{ display:'flex', gap:12, flexWrap:'wrap' }}>

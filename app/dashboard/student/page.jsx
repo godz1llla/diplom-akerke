@@ -103,7 +103,7 @@ export default function StudentDashboard() {
                   <div className={styles.resultFill} style={{ width: `${r.percentage || 0}%` }} />
                 </div>
                 <div className={styles.resultPct} style={{
-                  color: r.percentage >= 75 ? 'var(--emerald-400)' : r.percentage >= 50 ? 'var(--amber-400)' : 'var(--rose-400)'
+                  color: r.percentage >= 75 ? '#059669' : r.percentage >= 50 ? '#d97706' : '#e11d48'
                 }}>
                   {Math.round(r.percentage || 0)}%
                 </div>

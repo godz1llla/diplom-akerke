@@ -63,7 +63,7 @@
 
 .roleClass {
   font-size: 0.75rem;
-  color: var(--gray-400);
+  color: var(--gray-500);
 }
 
 .nav {
@@ -81,7 +81,7 @@
   border-radius: var(--radius-md);
   font-size: 0.875rem;
   font-weight: 500;
-  color: var(--gray-500);
+  color: var(--gray-600);
   transition: all 0.18s ease;
   position: relative;
   text-decoration: none;
@@ -132,7 +132,7 @@
   border-radius: var(--radius-md);
   background: none;
   border: none;
-  color: var(--gray-400);
+  color: var(--gray-500);
   font-size: 0.85rem;
   font-family: var(--font-main);
   cursor: pointer;
@@ -221,7 +221,7 @@
 
 .userRole {
   font-size: 0.7rem;
-  color: var(--gray-400);
+  color: var(--gray-500);
 }
 
 .content {

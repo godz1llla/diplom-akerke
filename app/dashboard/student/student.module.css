@@ -49,7 +49,7 @@
 }
 .statIcon  { font-size: 1.8rem; margin-bottom: 8px; }
 .statValue { font-size: 1.8rem; font-weight: 800; margin-bottom: 4px; }
-.statLabel { font-size: 0.76rem; color: var(--gray-400); font-weight: 500; }
+.statLabel { font-size: 0.76rem; color: var(--gray-600); font-weight: 500; }
 
 /* Section title */
 .sectionTitle {

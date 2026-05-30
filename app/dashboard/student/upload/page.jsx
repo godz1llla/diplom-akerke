@@ -36,13 +36,13 @@ export default function UploadPage() {
   return (
     <div style={{ display:'flex', flexDirection:'column', gap:'28px' }}>
       <div>
-        <h1 style={{ color:'#f0f0ff' }}>📤 My Projects</h1>
-        <p style={{ color:'var(--gray-400)', marginTop:'6px' }}>Upload your creative projects, videos, and presentations.</p>
+        <h1 style={{ color:'var(--gray-900)' }}>📤 My Projects</h1>
+        <p style={{ color:'var(--gray-500)', marginTop:'6px' }}>Upload your creative projects, videos, and presentations.</p>
       </div>
 
       {/* Upload form */}
-      <div className="glass-card" style={{ padding:'28px' }}>
-        <h4 style={{ color:'#f0f0ff', marginBottom:'20px' }}>➕ Upload New Project</h4>
+      <div className="glass-card" style={{ padding:'28px', background:'#fff', border:'1px solid var(--gray-200)' }}>
+        <h4 style={{ color:'var(--gray-900)', marginBottom:'20px' }}>➕ Upload New Project</h4>
         <form onSubmit={handleSubmit} id="project-upload-form">
           <div style={{ marginBottom:'14px' }}>
             <label htmlFor="proj-title">Project Title *</label>
@@ -89,33 +89,33 @@ export default function UploadPage() {
       </div>
 
       {/* My projects list */}
-      <h3 style={{ color:'#f0f0ff' }}>📁 My Uploaded Projects ({projects.length})</h3>
+      <h3 style={{ color:'var(--gray-900)' }}>📁 My Uploaded Projects ({projects.length})</h3>
       {loading ? (
-        <p style={{ color:'var(--gray-400)', textAlign:'center', padding:'32px' }}>Loading...</p>
+        <p style={{ color:'var(--gray-500)', textAlign:'center', padding:'32px' }}>Loading...</p>
       ) : projects.length === 0 ? (
-        <div className="glass-card" style={{ padding:'48px', textAlign:'center' }}>
+        <div className="glass-card" style={{ padding:'48px', textAlign:'center', background:'#fff', border:'1px solid var(--gray-200)' }}>
           <div style={{ fontSize:'3rem', marginBottom:'12px' }}>📁</div>
-          <p style={{ color:'var(--gray-400)' }}>No projects yet. Upload your first one above!</p>
+          <p style={{ color:'var(--gray-500)' }}>No projects yet. Upload your first one above!</p>
         </div>
       ) : (
         <div style={{ display:'grid', gridTemplateColumns:'repeat(2,1fr)', gap:'16px' }}>
           {projects.map(p => (
-            <div key={p.id} className="glass-card" style={{ padding:'22px' }} id={`proj-${p.id}`}>
+            <div key={p.id} className="glass-card" style={{ padding:'22px', background:'#fff', border:'1px solid var(--gray-200)' }} id={`proj-${p.id}`}>
               <div style={{ display:'flex', alignItems:'center', gap:'12px', marginBottom:'12px' }}>
                 <span style={{ fontSize:'2rem', color: TYPE_COLORS[p.project_type] || '#6244eb' }}>
                   {TYPE_ICONS[p.project_type] || '📦'}
                 </span>
                 <div>
-                  <div style={{ fontWeight:700, color:'#f0f0ff', fontSize:'.95rem' }}>{p.title}</div>
+                  <div style={{ fontWeight:700, color:'var(--gray-900)', fontSize:'.95rem' }}>{p.title}</div>
                   <div style={{ fontSize:'.75rem', color:'var(--gray-500)', textTransform:'capitalize' }}>{p.project_type}</div>
                 </div>
                 {p.grade && (
-                  <span style={{ marginLeft:'auto', background:'rgba(245,158,11,.15)', color:'var(--amber-400)', border:'1px solid rgba(245,158,11,.3)', padding:'3px 10px', borderRadius:'999px', fontSize:'.82rem', fontWeight:800 }}>
+                  <span style={{ marginLeft:'auto', background:'rgba(245,158,11,.1)', color:'#d97706', border:'1px solid rgba(245,158,11,.2)', padding:'3px 10px', borderRadius:'999px', fontSize:'.82rem', fontWeight:800 }}>
                     {p.grade}
                   </span>
                 )}
               </div>
-              {p.description && <p style={{ fontSize:'.83rem', color:'var(--gray-400)', lineHeight:1.55, marginBottom:'12px' }}>{p.description}</p>}
+              {p.description && <p style={{ fontSize:'.83rem', color:'var(--gray-600)', lineHeight:1.55, marginBottom:'12px' }}>{p.description}</p>}
               <div style={{ display:'flex', gap:'10px', flexWrap:'wrap' }}>
                 {p.drive_link && <a href={p.drive_link} target="_blank" rel="noopener noreferrer"
                   className="btn btn-secondary btn-sm" id={`drive-${p.id}`}>📁 Drive</a>}
@@ -123,8 +123,8 @@ export default function UploadPage() {
                   className="btn btn-secondary btn-sm" id={`video-${p.id}`}>🎥 Video</a>}
               </div>
               {p.feedback && (
-                <div style={{ marginTop:'14px', padding:'12px', background:'rgba(98,68,235,.08)', border:'1px solid rgba(98,68,235,.2)', borderRadius:'10px', fontSize:'.84rem', color:'var(--gray-300)' }}>
-                  <strong style={{ color:'var(--primary-300)' }}>💬 Teacher Feedback:</strong><br/>{p.feedback}
+                <div style={{ marginTop:'14px', padding:'12px', background:'rgba(98,68,235,.06)', border:'1px solid rgba(98,68,235,.15)', borderRadius:'10px', fontSize:'.84rem', color:'var(--gray-700)' }}>
+                  <strong style={{ color:'var(--primary-700)' }}>💬 Teacher Feedback:</strong><br/>{p.feedback}
                 </div>
               )}
               <div style={{ fontSize:'.72rem', color:'var(--gray-600)', marginTop:'10px' }}>

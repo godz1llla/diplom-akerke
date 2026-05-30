@@ -30,13 +30,13 @@ export default function QuizListPage() {
     load();
   }, [user]);
 
-  if (loading) return <div style={{ textAlign:'center', padding:60, color:'var(--gray-400)' }}>Loading quizzes...</div>;
+  if (loading) return <div style={{ textAlign:'center', padding:60, color:'var(--gray-500)' }}>Loading quizzes...</div>;
 
   return (
     <div className={styles.page}>
       <div className={styles.pageHeader}>
-        <h1 style={{ color:'#f0f0ff' }}>🧠 Quizzes</h1>
-        <p style={{ color:'var(--gray-400)', marginTop:'6px' }}>
+        <h1 style={{ color:'var(--gray-900)' }}>🧠 Quizzes</h1>
+        <p style={{ color:'var(--gray-500)', marginTop:'6px' }}>
           Complete all quizzes. After submitting, you'll see correct answers with explanations — then write in your Error Journal.
         </p>
       </div>
@@ -51,9 +51,9 @@ export default function QuizListPage() {
                 <div className={styles.quizIcon}>🧠</div>
                 {done && (
                   <div className={styles.scorePill} style={{
-                    background: pct >= 75 ? 'rgba(16,185,129,0.15)' : pct >= 50 ? 'rgba(245,158,11,0.15)' : 'rgba(244,63,94,0.15)',
-                    color: pct >= 75 ? 'var(--emerald-400)' : pct >= 50 ? 'var(--amber-400)' : 'var(--rose-400)',
-                    border: `1px solid ${pct >= 75 ? 'rgba(16,185,129,0.3)' : pct >= 50 ? 'rgba(245,158,11,0.3)' : 'rgba(244,63,94,0.3)'}`,
+                    background: pct >= 75 ? 'rgba(16,185,129,0.1)' : pct >= 50 ? 'rgba(245,158,11,0.1)' : 'rgba(244,63,94,0.1)',
+                    color: pct >= 75 ? '#059669' : pct >= 50 ? '#d97706' : '#e11d48',
+                    border: `1px solid ${pct >= 75 ? 'rgba(16,185,129,0.25)' : pct >= 50 ? 'rgba(245,158,11,0.25)' : 'rgba(244,63,94,0.25)'}`,
                   }}>
                     Best: {pct}%
                   </div>
