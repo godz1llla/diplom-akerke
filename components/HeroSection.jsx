@@ -38,8 +38,8 @@ export default function HeroSection() {
 
           {/* Sub-heading */}
           <p className={styles.subtitle}>
-            Through <strong style={{ color: 'var(--accent-400)' }}>digital linguistic tools</strong> and{' '}
-            <strong style={{ color: 'var(--primary-300)' }}>online learning platforms</strong> — a comprehensive
+            Through <strong style={{ color: 'var(--accent-600)' }}>digital linguistic tools</strong> and{' '}
+            <strong style={{ color: 'var(--primary-600)' }}>online learning platforms</strong> — a comprehensive
             framework for modern high school education.
           </p>
 
