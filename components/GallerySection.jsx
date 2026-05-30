@@ -14,6 +14,7 @@ const STATIC_PROJECTS = [
     emoji: '📊',
     color: '#6244eb',
     grade: 'A',
+    imageUrl: '/img-video/WhatsApp Image 2026-05-29 at 16.19.32.jpeg',
   },
   {
     id: 'static-2',
@@ -24,6 +25,7 @@ const STATIC_PROJECTS = [
     emoji: '🎥',
     color: '#22d3ee',
     grade: 'A+',
+    videoUrl: '/img-video/5.mp4',
   },
   {
     id: 'static-3',
@@ -34,6 +36,7 @@ const STATIC_PROJECTS = [
     emoji: '🌱',
     color: '#10b981',
     grade: 'A',
+    imageUrl: '/img-video/3.jpeg',
   },
 ];
 
