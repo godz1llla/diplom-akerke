@@ -60,7 +60,7 @@ export default function ErrorAnalysisSection() {
           {/* Left: How it works */}
           <div className={styles.leftCol}>
             <div className={`${styles.howCard} glass-card`}>
-              <h4 style={{ color: '#f0f0ff', marginBottom: '24px' }}>📋 How It Works</h4>
+              <h4 style={{ color: 'var(--gray-900)', marginBottom: '24px' }}>📋 How It Works</h4>
               <div className={styles.steps}>
                 {JOURNAL_STEPS.map((s) => (
                   <div key={s.step} className={styles.journalStep}>
@@ -81,7 +81,7 @@ export default function ErrorAnalysisSection() {
               <div className={styles.driveTop}>
                 <span style={{ fontSize: '2rem' }}>📁</span>
                 <div>
-                  <div style={{ fontWeight: 700, color: '#f0f0ff', fontSize: '0.95rem' }}>Google Drive Folder</div>
+                  <div style={{ fontWeight: 700, color: 'var(--gray-900)', fontSize: '0.95rem' }}>Google Drive Folder</div>
                   <div style={{ fontSize: '0.8rem', color: 'var(--gray-500)' }}>Shared with all students</div>
                 </div>
               </div>
@@ -98,7 +98,7 @@ export default function ErrorAnalysisSection() {
 
           {/* Right: Example journal entries */}
           <div className={styles.rightCol}>
-            <h4 style={{ color: '#f0f0ff', marginBottom: '20px' }}>
+            <h4 style={{ color: 'var(--gray-900)', marginBottom: '20px' }}>
               📖 Sample Journal Entries
             </h4>
             <div className={styles.entries}>
@@ -117,7 +117,7 @@ export default function ErrorAnalysisSection() {
                         fontWeight: 700,
                         letterSpacing: '0.05em',
                         textTransform: 'uppercase',
-                      }}>
+                       }}>
                       {ex.type} Error
                     </span>
                   </div>
@@ -142,7 +142,7 @@ export default function ErrorAnalysisSection() {
 
             {/* What this develops */}
             <div className={`${styles.developsCard} glass-card`} style={{ marginTop: '20px' }}>
-              <h4 style={{ color: '#f0f0ff', marginBottom: '14px', fontSize: '1rem' }}>
+              <h4 style={{ color: 'var(--gray-900)', marginBottom: '14px', fontSize: '1rem' }}>
                 🧠 This Develops:
               </h4>
               <div className={styles.developsGrid}>

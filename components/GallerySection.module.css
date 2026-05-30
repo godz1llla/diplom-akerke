@@ -43,9 +43,9 @@
   position: absolute;
   top: 12px;
   right: 12px;
-  background: rgba(30,30,66,0.8);
-  border: 1px solid var(--bg-border);
-  color: var(--amber-400);
+  background: var(--amber-50);
+  border: 1px solid var(--amber-200);
+  color: var(--amber-700);
   font-weight: 800;
   font-size: 0.9rem;
   padding: 4px 10px;
@@ -59,14 +59,14 @@
 .projectTitle {
   font-size: 0.98rem;
   font-weight: 700;
-  color: #f0f0ff;
+  color: var(--gray-900);
   margin-bottom: 6px;
   line-height: 1.4;
 }
 
 .studentName {
   font-size: 0.82rem;
-  color: var(--gray-400);
+  color: var(--gray-500);
   margin-bottom: 12px;
 }
 
@@ -80,10 +80,10 @@
   font-size: 0.72rem;
   font-weight: 600;
   padding: 3px 8px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.07);
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
   border-radius: var(--radius-full);
-  color: var(--gray-400);
+  color: var(--gray-600);
 }
 
 @media (max-width: 900px) {

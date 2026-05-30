@@ -90,9 +90,9 @@ export default function ResultsSection() {
                   <span className={styles.compareLabel}>Control</span>
                   <div className={styles.compareBar}>
                     <div className={styles.compareFill}
-                      style={{ width: `${r.control}%`, background: 'rgba(255,255,255,0.15)' }} />
+                      style={{ width: `${r.control}%`, background: 'var(--gray-200)' }} />
                   </div>
-                  <span className={styles.compareValue} style={{ color: 'var(--gray-400)' }}>{r.control}%</span>
+                  <span className={styles.compareValue} style={{ color: 'var(--gray-500)' }}>{r.control}%</span>
                 </div>
               </div>
 
@@ -105,7 +105,7 @@ export default function ResultsSection() {
 
         {/* Conclusions */}
         <div className={`${styles.conclusionsCard} glass-card`} style={{ marginTop: '64px' }}>
-          <h3 style={{ color: '#f0f0ff', marginBottom: '24px', textAlign: 'center' }}>
+          <h3 style={{ color: 'var(--gray-900)', marginBottom: '24px', textAlign: 'center' }}>
             🔬 What This Research Proves
           </h3>
           <div className={styles.conclusionsList}>

@@ -75,17 +75,17 @@
 
 .questionType {
   font-size: 0.75rem;
-  color: var(--gray-500);
-  background: rgba(255,255,255,0.04);
+  color: var(--gray-600);
+  background: var(--gray-50);
   padding: 4px 10px;
   border-radius: var(--radius-full);
-  border: 1px solid rgba(255,255,255,0.07);
+  border: 1px solid var(--gray-200);
 }
 
 .questionText {
   font-size: 1.05rem;
   font-weight: 600;
-  color: #f0f0ff;
+  color: var(--gray-900);
   margin-bottom: 20px;
   line-height: 1.5;
 }
@@ -101,47 +101,47 @@
   align-items: center;
   gap: 14px;
   padding: 14px 18px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
   border-radius: var(--radius-md);
   cursor: pointer;
   transition: all 0.2s ease;
   text-align: left;
-  color: var(--gray-300);
+  color: var(--gray-800);
   font-size: 0.92rem;
   font-family: var(--font-outfit);
   width: 100%;
 }
 
 .option:hover:not(.optionCorrect):not(.optionWrong):not(.optionSelected) {
-  background: rgba(98,68,235,0.12);
-  border-color: rgba(98,68,235,0.3);
-  color: #e8e8ff;
+  background: var(--gray-100);
+  border-color: var(--gray-300);
+  color: var(--gray-900);
 }
 
 .optionSelected {
-  background: rgba(98,68,235,0.18);
-  border-color: rgba(98,68,235,0.5);
-  color: #e8e8ff;
+  background: var(--primary-50);
+  border-color: var(--primary-400);
+  color: var(--primary-700);
 }
 
 .optionCorrect {
-  background: rgba(16,185,129,0.12) !important;
+  background: rgba(16,185,129,0.08) !important;
   border-color: rgba(16,185,129,0.4) !important;
-  color: var(--emerald-400) !important;
+  color: #065f46 !important;
 }
 
 .optionWrong {
-  background: rgba(244,63,94,0.12) !important;
+  background: rgba(244,63,94,0.08) !important;
   border-color: rgba(244,63,94,0.4) !important;
-  color: var(--rose-400) !important;
+  color: #e11d48 !important;
 }
 
 .optionLetter {
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.08);
+  background: var(--gray-100);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -167,13 +167,13 @@
 .explanationCorrect {
   background: rgba(16,185,129,0.08);
   border: 1px solid rgba(16,185,129,0.2);
-  color: var(--gray-300);
+  color: var(--gray-800);
 }
 
 .explanationWrong {
   background: rgba(244,63,94,0.08);
   border: 1px solid rgba(244,63,94,0.2);
-  color: var(--gray-300);
+  color: var(--gray-800);
 }
 
 .explanation strong {
@@ -182,7 +182,7 @@
 }
 
 .explanation p {
-  color: var(--gray-400);
+  color: var(--gray-600);
 }
 
 @media (max-width: 600px) {

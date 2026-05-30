@@ -89,12 +89,12 @@ export default function FeedbackSection() {
         {/* Pre/Post Charts */}
         <div className={`${styles.chartsCard} glass-card`}>
           <div className={styles.chartsHeader}>
-            <h3 style={{ color: '#f0f0ff' }}>📈 Pre-test vs Post-test Comparison</h3>
+            <h3 style={{ color: 'var(--gray-900)' }}>📈 Pre-test vs Post-test Comparison</h3>
             <div className={styles.legendRow}>
               <span className={styles.legendPre} />
-              <span style={{ fontSize: '0.82rem', color: 'var(--gray-400)' }}>Pre-test</span>
+              <span style={{ fontSize: '0.82rem', color: 'var(--gray-500)' }}>Pre-test</span>
               <span className={styles.legendPost} />
-              <span style={{ fontSize: '0.82rem', color: 'var(--gray-400)' }}>Post-test</span>
+              <span style={{ fontSize: '0.82rem', color: 'var(--gray-500)' }}>Post-test</span>
             </div>
           </div>
 
@@ -122,7 +122,7 @@ export default function FeedbackSection() {
 
         {/* Testimonials */}
         <div style={{ marginTop: '64px' }}>
-          <h3 style={{ textAlign: 'center', color: '#f0f0ff', marginBottom: '32px' }}>
+          <h3 style={{ textAlign: 'center', color: 'var(--gray-900)', marginBottom: '32px' }}>
             💬 Student Testimonials
           </h3>
           <div className={styles.testimonialsGrid}>

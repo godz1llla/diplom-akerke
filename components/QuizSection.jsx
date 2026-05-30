@@ -130,11 +130,11 @@ export default function QuizSection() {
               </div>
             </div>
             <div>
-              <h3 style={{ color: '#f0f0ff', marginBottom: '8px' }}>
+              <h3 style={{ color: 'var(--gray-900)', marginBottom: '8px' }}>
                 {pct >= 75 ? '🎉 Excellent work!' : pct >= 50 ? '📚 Good effort!' : '🔍 Keep learning!'}
               </h3>
-              <p style={{ color: 'var(--gray-400)', marginBottom: '16px' }}>
-                You scored <strong style={{ color: 'var(--primary-300)' }}>{score} out of {QUIZ_DATA.length}</strong> questions correctly.
+              <p style={{ color: 'var(--gray-600)', marginBottom: '16px' }}>
+                You scored <strong style={{ color: 'var(--primary-700)' }}>{score} out of {QUIZ_DATA.length}</strong> questions correctly.
                 Review the explanations below to understand each answer.
               </p>
               <button onClick={handleRetry} className="btn btn-secondary btn-sm" id="quiz-retry-btn">

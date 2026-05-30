@@ -128,13 +128,13 @@
 .cardTitle {
   font-size: 1.2rem;
   font-weight: 700;
-  color: #f0f0ff;
+  color: var(--gray-900);
   margin: 8px 0;
 }
 
 .cardDesc {
   font-size: 0.9rem;
-  color: var(--gray-400);
+  color: var(--gray-600);
   line-height: 1.65;
   margin-bottom: 16px;
 }
@@ -148,11 +148,11 @@
 
 .toolChip {
   padding: 4px 10px;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
   border-radius: var(--radius-full);
   font-size: 0.78rem;
-  color: var(--gray-300);
+  color: var(--gray-600);
   font-weight: 500;
 }
 
@@ -164,7 +164,7 @@
 
 .skillTag {
   font-size: 0.82rem;
-  color: var(--emerald-400);
+  color: #059669;
   font-weight: 500;
 }
 

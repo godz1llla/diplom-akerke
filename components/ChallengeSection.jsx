@@ -96,7 +96,7 @@ export default function ChallengeSection() {
         </div>
 
         {/* Topic Cards */}
-        <h3 style={{ textAlign: 'center', marginBottom: '28px', color: '#f0f0ff', marginTop: '64px' }}>
+        <h3 style={{ textAlign: 'center', marginBottom: '28px', color: 'var(--gray-900)', marginTop: '64px' }}>
           Challenge Topics
         </h3>
         <div className={styles.topicsGrid}>

@@ -73,8 +73,8 @@ export default function ReflectionSection() {
           {/* Why it matters */}
           <div className={styles.sidebar}>
             <div className={`${styles.whyCard} glass-card`}>
-              <h4 style={{ color: '#f0f0ff', marginBottom: '16px' }}>🧠 Why Reflect?</h4>
-              <p style={{ color: 'var(--gray-400)', fontSize: '0.88rem', lineHeight: 1.65, marginBottom: '20px' }}>
+              <h4 style={{ color: 'var(--gray-900)', marginBottom: '16px' }}>🧠 Why Reflect?</h4>
+              <p style={{ color: 'var(--gray-600)', fontSize: '0.88rem', lineHeight: 1.65, marginBottom: '20px' }}>
                 Reflection is a core critical thinking skill. When students articulate
                 what they learned and how they improved, they consolidate knowledge
                 and develop metacognitive awareness.
@@ -109,8 +109,8 @@ export default function ReflectionSection() {
             {success ? (
               <div className={styles.successState}>
                 <div className={styles.successEmoji}>🌟</div>
-                <h3 style={{ color: '#f0f0ff' }}>Reflection Submitted!</h3>
-                <p style={{ color: 'var(--gray-400)', maxWidth: 380, textAlign: 'center', lineHeight: 1.6 }}>
+                <h3 style={{ color: 'var(--gray-900)' }}>Reflection Submitted!</h3>
+                <p style={{ color: 'var(--gray-600)', maxWidth: 380, textAlign: 'center', lineHeight: 1.6 }}>
                   Your final reflection has been saved. Congratulations on completing
                   the full learning cycle — from reading to creating to reflecting!
                 </p>
@@ -125,7 +125,7 @@ export default function ReflectionSection() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} id="reflection-form">
-                <h4 style={{ color: '#f0f0ff', marginBottom: '24px' }}>Final Reflection Form</h4>
+                <h4 style={{ color: 'var(--gray-900)', marginBottom: '24px' }}>Final Reflection Form</h4>
 
                 <div className={styles.nameRow}>
                   <div className={styles.field}>

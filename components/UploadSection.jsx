@@ -78,7 +78,7 @@ export default function UploadSection() {
           {/* Info cards */}
           <div className={styles.infoSide}>
             <div className={`${styles.infoCard} glass-card`}>
-              <h4 style={{ color: '#f0f0ff', marginBottom: '16px' }}>📁 What to Upload</h4>
+              <h4 style={{ color: 'var(--gray-900)', marginBottom: '16px' }}>📁 What to Upload</h4>
               {[
                 ['📄', 'Essays & Reflections', 'Google Docs link'],
                 ['🎨', 'Posters & Infographics', 'Canva or Drive link'],
@@ -97,14 +97,14 @@ export default function UploadSection() {
             </div>
 
             <div className={`${styles.driveCard} glass-card`}>
-              <h4 style={{ color: '#f0f0ff', marginBottom: '8px' }}>🗂️ Shared Google Drive</h4>
-              <p style={{ color: 'var(--gray-400)', fontSize: '0.88rem', lineHeight: 1.6, marginBottom: '16px' }}>
+              <h4 style={{ color: 'var(--gray-900)', marginBottom: '8px' }}>🗂️ Shared Google Drive</h4>
+              <p style={{ color: 'var(--gray-600)', fontSize: '0.88rem', lineHeight: 1.6, marginBottom: '16px' }}>
                 All class submissions are collected in a shared folder.
                 Make sure your Drive link is set to "Anyone with the link can view".
               </p>
               <div className={styles.driveInfo}>
                 <span className={styles.driveIcon}>📂</span>
-                <span style={{ fontSize: '0.82rem', color: 'var(--accent-400)', fontWeight: 600 }}>
+                <span style={{ fontSize: '0.82rem', color: 'var(--accent-700)', fontWeight: 600 }}>
                   Class 10A — Digital Projects 2026
                 </span>
               </div>
@@ -113,13 +113,13 @@ export default function UploadSection() {
 
           {/* Form */}
           <div className={`${styles.formCard} glass-card`}>
-            <h4 style={{ color: '#f0f0ff', marginBottom: '24px' }}>Submit Your Project</h4>
+            <h4 style={{ color: 'var(--gray-900)', marginBottom: '24px' }}>Submit Your Project</h4>
 
             {success ? (
               <div className={styles.successMsg}>
                 <div className={styles.successIcon}>🎉</div>
-                <h3 style={{ color: '#f0f0ff' }}>Project Submitted!</h3>
-                <p style={{ color: 'var(--gray-400)' }}>
+                <h3 style={{ color: 'var(--gray-900)' }}>Project Submitted!</h3>
+                <p style={{ color: 'var(--gray-600)' }}>
                   Your project has been received. Your teacher will review it and provide feedback.
                 </p>
                 <button className="btn btn-secondary btn-sm" onClick={() => setSuccess(false)} id="upload-another-btn">

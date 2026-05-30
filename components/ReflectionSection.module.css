@@ -26,9 +26,10 @@
   align-items: center;
   gap: 10px;
   font-size: 0.88rem;
-  color: var(--gray-300);
+  color: var(--gray-700);
   padding: 8px 12px;
-  background: rgba(255,255,255,0.03);
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
   border-radius: var(--radius-sm);
   transition: background 0.2s ease;
 }
@@ -40,7 +41,7 @@
 .quoteMarks {
   font-size: 4rem;
   line-height: 0.8;
-  color: var(--amber-400);
+  color: var(--amber-500);
   font-family: Georgia, serif;
   margin-bottom: 12px;
   opacity: 0.6;
@@ -48,7 +49,7 @@
 
 .quoteBody {
   font-size: 0.95rem;
-  color: var(--gray-300);
+  color: var(--gray-700);
   font-style: italic;
   line-height: 1.6;
   margin-bottom: 12px;
@@ -56,7 +57,7 @@
 
 .quoteSource {
   font-size: 0.78rem;
-  color: var(--gray-500);
+  color: var(--gray-600);
   font-weight: 600;
 }
 
@@ -78,7 +79,7 @@
 .errorMsg {
   background: rgba(244,63,94,0.1);
   border: 1px solid rgba(244,63,94,0.25);
-  color: var(--rose-400);
+  color: #e11d48;
   padding: 12px 16px;
   border-radius: var(--radius-md);
   font-size: 0.88rem;
@@ -105,7 +106,7 @@
   background: rgba(245,158,11,0.12);
   border: 1px solid rgba(245,158,11,0.3);
   border-radius: var(--radius-full);
-  color: var(--amber-400);
+  color: var(--amber-700);
   font-weight: 700;
   font-size: 0.9rem;
 }
