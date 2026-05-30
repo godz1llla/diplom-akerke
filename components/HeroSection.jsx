@@ -5,7 +5,7 @@ import styles from './HeroSection.module.css';
 const STATS = [
   { value: '8', label: 'Learning Stages', icon: '📚' },
   { value: '94%', label: 'Student Engagement', icon: '🎯' },
-  { value: '2 Weeks', label: 'Creative Challenge', icon: '🏆' },
+  { value: '10 Weeks', label: 'Complete Program', icon: '🏆' },
   { value: '↑32%', label: 'Critical Thinking Growth', icon: '🧠' },
 ];
 

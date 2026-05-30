@@ -8,6 +8,7 @@ import styles from './dashboard.module.css';
 
 const STUDENT_NAV = [
   { href: '/dashboard/student',           icon: '🏠', label: 'Home' },
+  { href: '/dashboard/student/tasks',     icon: '📚', label: 'Textbook Tasks' },
   { href: '/dashboard/student/reading',   icon: '📖', label: 'Reading' },
   { href: '/dashboard/student/quiz',      icon: '🧠', label: 'Quizzes' },
   { href: '/dashboard/student/errors',    icon: '🔍', label: 'Error Journal' },

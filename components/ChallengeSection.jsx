@@ -31,9 +31,9 @@ export default function ChallengeSection() {
 
       <div className="container">
         <div className="section-header">
-          <div className="badge badge-amber section-badge">🔥 2-Week Challenge</div>
+          <div className="badge badge-amber section-badge">🔥 Creative Challenge</div>
           <h2>
-            2-Week{' '}
+            Weekly{' '}
             <span className="gradient-text-amber">Creative Thinking</span>
             {' '}Challenge
           </h2>
@@ -48,7 +48,7 @@ export default function ChallengeSection() {
           {/* Week 1 */}
           <div className={`${styles.weekCard} glass-card`}>
             <div className={styles.weekHeader}>
-              <span className={styles.weekNum}>Week 1</span>
+              <span className={styles.weekNum}>Phase 1</span>
               <span className={styles.weekTitle}>🎬 Plan & Record</span>
             </div>
             <div className={styles.weekSteps}>
@@ -75,7 +75,7 @@ export default function ChallengeSection() {
           {/* Week 2 */}
           <div className={`${styles.weekCard} glass-card`}>
             <div className={styles.weekHeader}>
-              <span className={styles.weekNum}>Week 2</span>
+              <span className={styles.weekNum}>Phase 2</span>
               <span className={styles.weekTitle}>🚀 Share & Discuss</span>
             </div>
             <div className={styles.weekSteps}>

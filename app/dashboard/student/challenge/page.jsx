@@ -35,9 +35,9 @@ export default function ChallengePage() {
   return (
     <div style={{ display:'flex', flexDirection:'column', gap:'28px' }}>
       <div>
-        <h1 style={{ color:'var(--gray-900)' }}>🎥 2-Week Creative Challenge</h1>
+        <h1 style={{ color:'var(--gray-900)' }}>🎥 Creative Video Challenge</h1>
         <p style={{ color:'var(--gray-500)', marginTop:'6px' }}>
-          Create a TikTok or vlog about your chosen topic. Week 1: record. Week 2: share and discuss.
+          Create a TikTok or vlog about your chosen topic. Phase 1: record. Phase 2: share and discuss.
         </p>
       </div>
 
@@ -47,7 +47,7 @@ export default function ChallengePage() {
           <button key={w} onClick={()=>setWeek(w)}
             className={`btn ${week===w ? 'btn-primary' : 'btn-secondary'}`}
             id={`week-${w}-btn`}>
-            Week {w} {w===1 ? '🎬 Plan & Record' : '🚀 Share & Discuss'}
+            Phase {w} {w===1 ? '🎬 Plan & Record' : '🚀 Share & Discuss'}
           </button>
         ))}
       </div>
@@ -55,11 +55,11 @@ export default function ChallengePage() {
       {/* Instructions */}
       <div className="glass-card" style={{ padding:24, background:'#fff', border:'1px solid var(--gray-200)' }}>
         <h4 style={{ color:'var(--gray-900)', marginBottom:14 }}>
-          {week===1 ? '🎬 Week 1 — Plan & Record' : '🚀 Week 2 — Share & Discuss'}
+          {week===1 ? '🎬 Phase 1 — Plan & Record' : '🚀 Phase 2 — Share & Discuss'}
         </h4>
         <div style={{ display:'flex', flexDirection:'column', gap:10 }}>
           {(week===1 ? [
-            'Choose your topic from the 4 options below',
+            'Choose your topic from the 4 themes',
             'Research and gather information about it',
             'Write a short script (30–60 seconds)',
             'Record your TikTok or Vlog video',
@@ -103,7 +103,7 @@ export default function ChallengePage() {
 
       {/* Submit form */}
       <div className="glass-card" style={{ padding:24, background:'#fff', border:'1px solid var(--gray-200)' }}>
-        <h4 style={{ color:'var(--gray-900)', marginBottom:16 }}>📤 Submit Week {week} Work</h4>
+        <h4 style={{ color:'var(--gray-900)', marginBottom:16 }}>📤 Submit Phase {week} Work</h4>
         <form onSubmit={handleSubmit} id="challenge-form">
           <div style={{ marginBottom:14 }}>
             <label htmlFor="ch-video">🎥 Video / TikTok Link</label>

@@ -5,7 +5,7 @@ const SECTIONS = [
   { label: 'Learning Process', href: '#learning' },
   { label: 'Quiz', href: '#quiz' },
   { label: 'Error Analysis', href: '#errors' },
-  { label: '2-Week Challenge', href: '#challenge' },
+  { label: 'Creative Challenge', href: '#challenge' },
   { label: 'Project Gallery', href: '#gallery' },
   { label: 'Upload Project', href: '#upload' },
   { label: 'Feedback', href: '#feedback' },

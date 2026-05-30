@@ -46,7 +46,7 @@ const STEPS = [
     number: '04',
     icon: '🎥',
     week: 'Weeks 4–5',
-    title: '2-Week Creative Challenge',
+    title: 'Creative Challenge',
     subtitle: 'STEP 4 — Create',
     topic: 'Food Science & Healthy Lifestyle',
     color: 'rose',

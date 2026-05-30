@@ -7,10 +7,11 @@ import { supabase } from '../../../lib/supabase';
 import styles from './student.module.css';
 
 const QUICK_LINKS = [
+  { href: '/dashboard/student/tasks',     icon: '📚', label: 'Textbook Tasks',   color: '#fb923c', desc: 'Explore the 10-week program' },
   { href: '/dashboard/student/reading',   icon: '📖', label: 'Read Texts',       color: '#6244eb', desc: 'Start with today\'s reading' },
   { href: '/dashboard/student/quiz',      icon: '🧠', label: 'Take a Quiz',      color: '#22d3ee', desc: 'Test your comprehension' },
   { href: '/dashboard/student/errors',    icon: '🔍', label: 'Error Journal',    color: '#f59e0b', desc: 'Analyze your mistakes' },
-  { href: '/dashboard/student/challenge', icon: '🎥', label: '2-Week Challenge', color: '#10b981', desc: 'Record your creative video' },
+  { href: '/dashboard/student/challenge', icon: '🎥', label: 'Creative Challenge', color: '#10b981', desc: 'Submit speaking & video tasks' },
   { href: '/dashboard/student/upload',    icon: '📤', label: 'Upload Project',   color: '#fb7185', desc: 'Submit your creative work' },
   { href: '/dashboard/student/progress',  icon: '📊', label: 'My Progress',      color: '#a49dff', desc: 'See your growth over time' },
 ];
