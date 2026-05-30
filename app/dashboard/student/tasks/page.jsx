@@ -1,6 +1,6 @@
 'use client';
 
-import BookTasksSection from '../../../components/BookTasksSection';
+import BookTasksSection from '../../../../components/BookTasksSection';
 
 export default function StudentTasksPage() {
   return (
