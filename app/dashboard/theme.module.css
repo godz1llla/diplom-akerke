@@ -1,0 +1,10 @@
+/* ─── Shared light theme overrides for ALL dashboard pages ─── */
+
+/* Redefine glass-card for white theme */
+:global(.glass-card) {
+  background: #ffffff !important;
+  border: 1px solid var(--gray-200) !important;
+  border-radius: var(--radius-lg) !important;
+  box-shadow: var(--shadow-sm) !important;
+  backdrop-filter: none !important;
+}
