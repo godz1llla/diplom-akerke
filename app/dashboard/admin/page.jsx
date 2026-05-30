@@ -38,8 +38,8 @@ export default function AdminDashboard() {
   return (
     <div className={styles.page}>
       <div className={styles.header}>
-        <h1 style={{ color:'#f0f0ff' }}>👩‍🏫 Admin Dashboard</h1>
-        <p style={{ color:'var(--gray-400)', marginTop:'6px' }}>Overview of all student activity and platform metrics.</p>
+        <h1 style={{ color:'var(--gray-900)' }}>👩‍🏫 Admin Dashboard</h1>
+        <p style={{ color:'var(--gray-500)', marginTop:'6px' }}>Overview of all student activity and platform metrics.</p>
       </div>
 
       {/* Stats */}
@@ -65,7 +65,7 @@ export default function AdminDashboard() {
           <Link key={a.href} href={a.href} className={`${styles.actionCard} glass-card`} id={`admin-action-${a.label.toLowerCase().replace(' ','')}`}>
             <span style={{ fontSize:'1.8rem', color:a.color }}>{a.icon}</span>
             <div>
-              <div style={{ fontWeight:700, color:'#f0f0ff', fontSize:'.95rem' }}>{a.label}</div>
+              <div style={{ fontWeight:700, color:'var(--gray-800)', fontSize:'.95rem' }}>{a.label}</div>
               <div style={{ fontSize:'.78rem', color:'var(--gray-500)' }}>{a.desc}</div>
             </div>
             <span style={{ marginLeft:'auto', color:'var(--gray-600)' }}>→</span>
@@ -84,7 +84,7 @@ export default function AdminDashboard() {
               <div key={p.id} className={styles.recentRow} id={`recent-proj-${p.id}`}>
                 <div className={styles.recentIcon}>📄</div>
                 <div>
-                  <div style={{ fontSize:'.88rem', fontWeight:600, color:'#f0f0ff' }}>{p.title}</div>
+                  <div style={{ fontSize:'.88rem', fontWeight:600, color:'var(--gray-800)' }}>{p.title}</div>
                   <div style={{ fontSize:'.75rem', color:'var(--gray-500)' }}>
                     {p.profiles?.full_name} {p.profiles?.class ? `· ${p.profiles.class}` : ''} · {new Date(p.created_at).toLocaleDateString()}
                   </div>
@@ -112,7 +112,7 @@ export default function AdminDashboard() {
                 <div key={r.id} className={styles.recentRow} id={`recent-result-${r.id}`}>
                   <div className={styles.recentIcon}>🎯</div>
                   <div>
-                    <div style={{ fontSize:'.88rem', fontWeight:600, color:'#f0f0ff' }}>{r.profiles?.full_name}</div>
+                    <div style={{ fontSize:'.88rem', fontWeight:600, color:'var(--gray-800)' }}>{r.profiles?.full_name}</div>
                     <div style={{ fontSize:'.75rem', color:'var(--gray-500)' }}>{r.quizzes?.title} · {new Date(r.completed_at).toLocaleDateString()}</div>
                   </div>
                   <span style={{ marginLeft:'auto', fontWeight:800, fontSize:'.9rem', color: pct >= 75 ? 'var(--emerald-400)' : pct >= 50 ? 'var(--amber-400)' : 'var(--rose-400)', flexShrink:0 }}>

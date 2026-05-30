@@ -53,8 +53,8 @@ export default function StudentDashboard() {
         <div className={styles.welcomeBadge}>
           <span>🏆</span>
           <div>
-            <div style={{ fontWeight: 700, color: '#f0f0ff', fontSize: '0.9rem' }}>Learning Streak</div>
-            <div style={{ color: 'var(--amber-400)', fontWeight: 800, fontSize: '1.4rem' }}>Keep it up!</div>
+            <div style={{ fontWeight: 700, color: 'var(--gray-800)', fontSize: '0.9rem' }}>Learning Streak</div>
+            <div style={{ color: 'var(--amber-500)', fontWeight: 800, fontSize: '1.4rem' }}>Keep it up!</div>
           </div>
         </div>
       </div>
