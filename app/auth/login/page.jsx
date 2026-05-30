@@ -99,8 +99,21 @@ export default function LoginPage() {
           <p>🧪 Demo accounts:</p>
           <div className={styles.demoAccounts}>
             <span><strong>Admin:</strong> admin@criticalminds.edu</span>
-            <span><strong>Student:</strong> student@criticalminds.edu</span>
             <span><strong>Password:</strong> demo1234</span>
+          </div>
+          <p style={{ marginTop: '8px', marginBottom: '4px' }}>🎓 Student accounts (Password: demo1234):</p>
+          <div className={styles.demoAccountsList}>
+            <span>elnara@criticalminds.edu (Эльнара)</span>
+            <span>adina@criticalminds.edu (Адина)</span>
+            <span>nursultan@criticalminds.edu (Нурсултан)</span>
+            <span>bibihadisha@criticalminds.edu (Бибихадиша)</span>
+            <span>shahmardan@criticalminds.edu (Шахмардан)</span>
+            <span>kassiyet@criticalminds.edu (Қасиет)</span>
+            <span>assyl@criticalminds.edu (Асыл)</span>
+            <span>bibarys@criticalminds.edu (Бибарыс)</span>
+            <span>gaukhar@criticalminds.edu (Гаухар)</span>
+            <span>abdirazaq@criticalminds.edu (Әбдіразақ)</span>
+            <span>mustafa@criticalminds.edu (Мустафа)</span>
           </div>
         </div>
       </div>

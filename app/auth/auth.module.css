@@ -142,6 +142,9 @@
   display: flex;
   flex-direction: column;
   gap: 3px;
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--primary-100);
 }
 
 .demoAccounts span {
@@ -152,4 +155,32 @@
 
 .demoAccounts strong {
   color: var(--primary-700);
+}
+
+.demoAccountsList {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  max-height: 100px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.demoAccountsList::-webkit-scrollbar {
+  width: 4px;
+}
+
+.demoAccountsList::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.demoAccountsList::-webkit-scrollbar-thumb {
+  background: var(--primary-200);
+  border-radius: 2px;
+}
+
+.demoAccountsList span {
+  font-size: 0.75rem;
+  color: var(--gray-500);
+  font-family: monospace;
 }
