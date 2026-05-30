@@ -3,84 +3,86 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--gradient-hero);
+  background: linear-gradient(135deg, #eff6ff 0%, #f0f9ff 40%, #f8fafc 100%);
   position: relative;
   overflow: hidden;
   padding: 24px;
 }
 
+/* Subtle decorative orbs */
 .orb1 {
   position: absolute;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(98,68,235,0.4) 0%, transparent 70%);
-  top: -200px;
-  left: -200px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(59,130,246,0.15) 0%, transparent 70%);
+  top: -150px;
+  left: -150px;
   border-radius: 50%;
-  filter: blur(70px);
-  animation: float 10s ease-in-out infinite;
+  filter: blur(60px);
   pointer-events: none;
+  animation: float 12s ease-in-out infinite;
 }
 
 .orb2 {
   position: absolute;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(34,211,238,0.3) 0%, transparent 70%);
-  bottom: -150px;
-  right: -150px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(45,212,191,0.12) 0%, transparent 70%);
+  bottom: -100px;
+  right: -100px;
   border-radius: 50%;
-  filter: blur(70px);
-  animation: float 12s ease-in-out infinite reverse;
+  filter: blur(60px);
   pointer-events: none;
+  animation: float 14s ease-in-out infinite reverse;
 }
 
+/* Clean grid pattern */
 .grid {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(124,106,245,0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(124,106,245,0.05) 1px, transparent 1px);
-  background-size: 60px 60px;
+    linear-gradient(rgba(59,130,246,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59,130,246,0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
   pointer-events: none;
 }
 
 .card {
   width: 100%;
-  max-width: 440px;
-  background: rgba(24,24,56,0.75);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(124,106,245,0.2);
-  border-radius: 24px;
-  padding: 40px;
+  max-width: 420px;
+  background: #ffffff;
+  border: 1px solid var(--gray-200);
+  border-radius: 20px;
+  padding: 40px 36px;
   position: relative;
   z-index: 1;
-  animation: slide-up 0.5s ease;
+  box-shadow: 0 8px 40px rgba(15,23,42,0.10), 0 2px 8px rgba(15,23,42,0.05);
+  animation: slide-up 0.4s ease;
 }
 
 .logo {
   display: block;
   text-align: center;
-  font-size: 1.4rem;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
   font-weight: 900;
   background: var(--gradient-primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
 }
 
 .title {
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   font-weight: 800;
-  color: #f0f0ff;
+  color: var(--gray-900);
   text-align: center;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .subtitle {
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   color: var(--gray-400);
   text-align: center;
   margin-bottom: 28px;
@@ -105,49 +107,49 @@
 .dividerRow {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin: 20px 0;
+  gap: 10px;
+  margin: 18px 0;
 }
 
 .dividerRow span {
   flex: 1;
   height: 1px;
-  background: rgba(255,255,255,0.08);
+  background: var(--gray-200);
 }
 
 .dividerRow p {
-  font-size: 0.82rem;
-  color: var(--gray-500);
+  font-size: 0.8rem;
+  color: var(--gray-400);
   white-space: nowrap;
 }
 
 .demoHint {
-  margin-top: 24px;
-  padding: 16px;
-  background: rgba(98,68,235,0.06);
-  border: 1px solid rgba(98,68,235,0.15);
-  border-radius: 12px;
+  margin-top: 20px;
+  padding: 14px;
+  background: var(--primary-50);
+  border: 1px solid var(--primary-100);
+  border-radius: 10px;
 }
 
 .demoHint p {
-  font-size: 0.8rem;
-  color: var(--gray-400);
-  margin-bottom: 10px;
-  font-weight: 600;
+  font-size: 0.78rem;
+  color: var(--primary-600);
+  margin-bottom: 8px;
+  font-weight: 700;
 }
 
 .demoAccounts {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 3px;
 }
 
 .demoAccounts span {
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   color: var(--gray-500);
   font-family: monospace;
 }
 
 .demoAccounts strong {
-  color: var(--primary-300);
+  color: var(--primary-700);
 }

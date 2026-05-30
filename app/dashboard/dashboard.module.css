@@ -6,68 +6,70 @@
 
 /* ── Sidebar ── */
 .sidebar {
-  width: 260px;
+  width: 256px;
   flex-shrink: 0;
-  background: var(--bg-surface);
-  border-right: 1px solid var(--bg-border);
+  background: #ffffff;
+  border-right: 1px solid var(--gray-200);
   display: flex;
   flex-direction: column;
-  padding: 24px 16px;
+  padding: 24px 12px;
   position: sticky;
   top: 0;
   height: 100vh;
   overflow-y: auto;
+  box-shadow: 1px 0 8px rgba(15,23,42,0.04);
 }
 
 .sidebarLogo {
-  font-size: 1.25rem;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
   font-weight: 900;
   background: var(--gradient-primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  margin-bottom: 24px;
-  padding: 0 8px;
+  margin-bottom: 20px;
+  padding: 0 12px;
   display: block;
 }
 
 .roleBadge {
-  background: rgba(98,68,235,0.1);
-  border: 1px solid rgba(98,68,235,0.2);
+  background: var(--primary-50);
+  border: 1px solid var(--primary-100);
   border-radius: var(--radius-md);
-  padding: 12px 14px;
-  margin-bottom: 28px;
+  padding: 10px 12px;
+  margin-bottom: 24px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 3px;
 }
 
 .roleBadge > span:first-child {
-  font-size: 0.78rem;
-  color: var(--primary-300);
+  font-size: 0.72rem;
+  color: var(--primary-600);
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.07em;
 }
 
 .roleName {
-  font-size: 0.92rem;
-  font-weight: 600;
-  color: #f0f0ff;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--gray-900);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
 .roleClass {
-  font-size: 0.78rem;
-  color: var(--gray-500);
+  font-size: 0.75rem;
+  color: var(--gray-400);
 }
 
 .nav {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 2px;
   flex: 1;
 }
 
@@ -75,24 +77,24 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 10px 12px;
+  padding: 9px 12px;
   border-radius: var(--radius-md);
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   font-weight: 500;
-  color: var(--gray-400);
-  transition: all 0.2s ease;
+  color: var(--gray-500);
+  transition: all 0.18s ease;
   position: relative;
   text-decoration: none;
 }
 
 .navItem:hover {
-  background: rgba(98,68,235,0.1);
-  color: var(--gray-200);
+  background: var(--gray-100);
+  color: var(--gray-800);
 }
 
 .navItemActive {
-  background: rgba(98,68,235,0.18);
-  color: #e8e8ff;
+  background: var(--primary-50);
+  color: var(--primary-700);
   font-weight: 600;
 }
 
@@ -101,24 +103,24 @@
 }
 
 .navIcon {
-  font-size: 1.1rem;
-  width: 22px;
+  font-size: 1rem;
+  width: 20px;
   text-align: center;
   flex-shrink: 0;
 }
 
 .activeDot {
-  width: 6px;
-  height: 6px;
-  background: var(--primary-400);
+  width: 5px;
+  height: 5px;
+  background: var(--primary-500);
   border-radius: 50%;
   margin-left: auto;
 }
 
 .sidebarBottom {
-  padding-top: 16px;
-  border-top: 1px solid var(--bg-border);
-  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--gray-200);
+  margin-top: 12px;
 }
 
 .signOutBtn {
@@ -126,21 +128,21 @@
   align-items: center;
   gap: 8px;
   width: 100%;
-  padding: 10px 12px;
+  padding: 9px 12px;
   border-radius: var(--radius-md);
   background: none;
   border: none;
-  color: var(--gray-500);
-  font-size: 0.88rem;
-  font-family: var(--font-outfit);
+  color: var(--gray-400);
+  font-size: 0.85rem;
+  font-family: var(--font-main);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.18s ease;
   text-align: left;
 }
 
 .signOutBtn:hover {
-  background: rgba(244,63,94,0.1);
-  color: var(--rose-400);
+  background: rgba(239,68,68,0.08);
+  color: var(--rose-500);
 }
 
 /* ── Main Area ── */
@@ -149,32 +151,34 @@
   display: flex;
   flex-direction: column;
   min-width: 0;
+  background: var(--bg-base);
 }
 
 .topBar {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(11,11,26,0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--bg-border);
-  padding: 14px 28px;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--gray-200);
+  padding: 12px 28px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
+  box-shadow: 0 1px 4px rgba(15,23,42,0.05);
 }
 
 .topBarLeft {}
 
 .pageTitle {
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 700;
-  color: #f0f0ff;
+  color: var(--gray-800);
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 7px;
 }
 
 .topBarRight {}
@@ -182,23 +186,23 @@
 .userChip {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 6px 12px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid var(--bg-border);
+  gap: 8px;
+  padding: 5px 12px 5px 6px;
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
   border-radius: var(--radius-full);
 }
 
 .userAvatar {
-  width: 30px;
-  height: 30px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   background: var(--gradient-primary);
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: #fff;
   flex-shrink: 0;
 }
@@ -209,28 +213,28 @@
 }
 
 .userName {
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   font-weight: 600;
-  color: #f0f0ff;
+  color: var(--gray-800);
   line-height: 1.2;
 }
 
 .userRole {
-  font-size: 0.72rem;
-  color: var(--gray-500);
+  font-size: 0.7rem;
+  color: var(--gray-400);
 }
 
 .content {
   flex: 1;
-  padding: 32px 28px;
+  padding: 28px 28px;
   overflow-y: auto;
 }
 
 /* Spinner */
 .spinner {
-  width: 48px;
-  height: 48px;
-  border: 3px solid rgba(98,68,235,0.2);
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--gray-200);
   border-top-color: var(--primary-500);
   border-radius: 50%;
   animation: spin-slow 0.8s linear infinite;
@@ -244,6 +248,6 @@
     padding: 20px 16px;
   }
   .topBar {
-    padding: 12px 16px;
+    padding: 10px 16px;
   }
 }
