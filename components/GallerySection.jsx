@@ -5,39 +5,109 @@ import { supabase } from '../lib/supabase';
 import styles from './GallerySection.module.css';
 
 const STATIC_PROJECTS = [
+  // 1. Абдинур Эльнара
   {
-    id: 'static-1',
-    type: 'Infographic',
-    title: 'Social Media & Teen Mental Health',
-    student: 'Asel M.',
-    tags: ['Design', 'Research', 'Critical Thinking'],
-    emoji: '📊',
+    id: 'static-elnara',
+    type: 'Video / Speaking',
+    title: 'Speaking Reflection Task',
+    student: 'Абдинур Эльнара',
+    tags: ['Speaking', 'Reflection', 'Unit 2'],
+    emoji: '🎥',
     color: '#6244eb',
     grade: 'A',
-    imageUrl: '/img-video/WhatsApp Image 2026-05-29 at 16.19.32.jpeg',
+    videoUrl: '/img-video/Абдинур_Эльнара_vd2.MOV', // 36MB
   },
+
+  // 2. Алиева Адина
   {
-    id: 'static-2',
-    type: 'Video / TikTok',
-    title: 'Why AI Cannot Replace Teachers',
-    student: 'Daniyar K.',
-    tags: ['Speaking', 'Argument', 'Video'],
-    emoji: '🎥',
-    color: '#22d3ee',
-    grade: 'A+',
-    videoUrl: '/img-video/5.mp4',
-  },
-  {
-    id: 'static-3',
+    id: 'static-adina',
     type: 'Presentation',
-    title: 'Climate Action: What Can WE Do?',
-    student: 'Zarina T.',
-    tags: ['Environment', 'Creativity', 'Slides'],
-    emoji: '🌱',
+    title: 'Digital Literacy Research',
+    student: 'Алиева Адина',
+    tags: ['Research', 'Presentation', 'PDF'],
+    emoji: '📊',
+    color: '#22d3ee',
+    grade: 'A',
+    pdfUrl: '/img-video/Алиева_Адина_pr1.pdf', // 9.9MB
+  },
+
+  // 3. Асанбек Нурсултан
+  {
+    id: 'static-nursultan',
+    type: 'Video / Speaking',
+    title: 'Peer Pressure Discussion Task',
+    student: 'Асанбек Нурсултан',
+    tags: ['Speaking', 'Peer Pressure', 'Video'],
+    emoji: '🎥',
+    color: '#10b981',
+    grade: 'A+',
+    videoUrl: '/img-video/Асанбек_Нұрсұлтан_vd1.mp4', // 12.4MB
+  },
+
+  // 4. Аскаркызы Бибихадиша
+  {
+    id: 'static-bibihadisha',
+    type: 'Infographic',
+    title: 'Conflict Resolution Concept Map',
+    student: 'Аскаркызы Бибихадиша',
+    tags: ['Infographic', 'Design', 'Image'],
+    emoji: '🎨',
+    color: '#f59e0b',
+    grade: 'A+',
+    imageUrl: '/img-video/Асханкызы_Бибіхадиша_pr1.jpeg', // 0.2MB
+  },
+
+  // 5. Ахан Шахмардан
+  {
+    id: 'static-shahmardan',
+    type: 'Presentation',
+    title: 'Active Citizenship roadmap',
+    student: 'Ахан Шахмардан',
+    tags: ['Citizenship', 'Research', 'PDF'],
+    emoji: '📊',
+    color: '#fb7185',
+    grade: 'A',
+    pdfUrl: '/img-video/Ахан_Шахмардан_pr1.pdf', // 1.6MB
+  },
+
+  // 6. Әбдібек Қасиет
+  {
+    id: 'static-kassiyet',
+    type: 'Video / Discussion',
+    title: 'Unit 1 Oral Discussion Assessment',
+    student: 'Әбдібек Қасиет',
+    tags: ['Speaking', 'Discussion', 'Video'],
+    emoji: '🎥',
+    color: '#a49dff',
+    grade: 'A',
+    videoUrl: '/img-video/Әбдібек_Қасиет_vd1.MOV', // 9.7MB
+  },
+
+  // 7. Әлжаппарова Асыл
+  {
+    id: 'static-assyl',
+    type: 'Video / Critique',
+    title: 'Digital Tools & E-Learning Critique',
+    student: 'Әлжаппарова Асыл',
+    tags: ['Critique', 'E-Learning', 'Video'],
+    emoji: '🎥',
+    color: '#38bdf8',
+    grade: 'A+',
+    videoUrl: '/img-video/Әлжаппарова_Асыл_vd1.MOV', // 16.9MB
+  },
+
+  // 8. Әшірбек Бибарыс
+  {
+    id: 'static-bibarys',
+    type: 'Presentation',
+    title: 'Environmental Protection Action Slides',
+    student: 'Әшірбек Бибарыс',
+    tags: ['Environment', 'Presentation', 'PDF'],
+    emoji: '📊',
     color: '#10b981',
     grade: 'A',
-    imageUrl: '/img-video/3.jpeg',
-  },
+    pdfUrl: '/img-video/Әшірбек_Бибарыс_pr1.pdf', // 3.1MB
+  }
 ];
 
 const TYPE_CONFIGS = {
@@ -107,12 +177,24 @@ export default function GallerySection() {
 
         <div className={styles.gallery}>
           {allProjects.map((project) => {
-            // Check if we have media (image/video)
-            const hasVideo = project.videoUrl && (project.videoUrl.endsWith('.mp4') || project.videoUrl.includes('/img-video/'));
-            const hasImage = project.imageUrl && (project.imageUrl.endsWith('.jpeg') || project.imageUrl.endsWith('.jpg') || project.imageUrl.endsWith('.png') || project.imageUrl.includes('/img-video/'));
+            const videoUrlLower = (project.videoUrl || '').toLowerCase();
+            const imageUrlLower = (project.imageUrl || '').toLowerCase();
+            const pdfUrlLower = (project.pdfUrl || '').toLowerCase();
+
+            const isPdf = !!project.pdfUrl || pdfUrlLower.endsWith('.pdf');
+            const hasVideo = !!project.videoUrl && (videoUrlLower.endsWith('.mp4') || videoUrlLower.endsWith('.mov') || videoUrlLower.endsWith('.webm'));
+            const hasImage = !!project.imageUrl && (imageUrlLower.endsWith('.jpeg') || imageUrlLower.endsWith('.jpg') || imageUrlLower.endsWith('.png'));
+
+            const cardClickUrl = project.videoUrl || project.imageUrl || project.pdfUrl;
 
             return (
-              <div key={project.id} className={`${styles.card} glass-card`} id={`project-${project.id}`}>
+              <div 
+                key={project.id} 
+                className={`${styles.card} glass-card`} 
+                id={`project-${project.id}`}
+                onClick={() => cardClickUrl && window.open(cardClickUrl, '_blank')}
+                title="Click to view full project file"
+              >
                 {/* Preview area */}
                 <div className={styles.preview} style={{
                   background: `radial-gradient(circle at 30% 30%, ${project.color}30 0%, transparent 70%)`,
@@ -122,6 +204,13 @@ export default function GallerySection() {
                     <video src={project.videoUrl} muted loop autoPlay playsInline className={styles.previewVideo} />
                   ) : hasImage ? (
                     <img src={project.imageUrl} alt={project.title} className={styles.previewImg} />
+                  ) : isPdf ? (
+                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '12px', zIndex: 1, width: '100%', height: '100%' }}>
+                      <span style={{ fontSize: '3.2rem' }}>📄</span>
+                      <span style={{ fontSize: '0.7rem', fontWeight: 700, color: 'var(--gray-600)', background: 'rgba(0,0,0,0.05)', padding: '4px 10px', borderRadius: '4px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                        Open PDF Presentation
+                      </span>
+                    </div>
                   ) : (
                     <span className={styles.previewEmoji}>{project.emoji}</span>
                   )}
